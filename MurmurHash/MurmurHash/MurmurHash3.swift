@@ -1,5 +1,5 @@
 //
-//  swift
+//  MurmurHash3.swift
 //  MurmurHash
 //
 //  Created by Daisuke T on 2019/02/06.
@@ -7,16 +7,6 @@
 //
 
 import Foundation
-
-
-
-// TODO: travis
-// TODO: podspec
-// TODO: readme
-// TODO: header image
-// TODO: demo
-
-
 
 public class MurmurHash3 {
 	
