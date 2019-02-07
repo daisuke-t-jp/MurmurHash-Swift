@@ -6,7 +6,7 @@
 //  Copyright © 2019 MurmurHash. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for MurmurHash.
 FOUNDATION_EXPORT double MurmurHashVersionNumber;
