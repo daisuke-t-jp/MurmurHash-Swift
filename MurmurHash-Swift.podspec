@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "MurmurHash-Swift"
-s.version      = "1.0.0"
+s.version      = "1.0.1"
 s.summary      = "MurmurHash framework by Swift."
 s.homepage     = "https://github.com/daisuke-t-jp/MurmurHash-Swift"
 s.screenshots  = "https://raw.githubusercontent.com/daisuke-t-jp/MurmurHash-Swift/master/doc/header.png"
