@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		029266E2220C1403002CADA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029266E1220C1403002CADA5 /* AppDelegate.swift */; };
+		029266E4220C1403002CADA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029266E3220C1403002CADA5 /* ViewController.swift */; };
+		029266E6220C1404002CADA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029266E5220C1404002CADA5 /* Assets.xcassets */; };
+		029266E9220C1404002CADA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029266E7220C1404002CADA5 /* Main.storyboard */; };
+		6C348A3065414C58AC891C6B /* Pods_MurmurHashDemoMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E23775481C6DA10EC2771CD /* Pods_MurmurHashDemoMacOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000678B241E6919C14422D61 /* Pods-MurmurHashDemoMacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoMacOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS.debug.xcconfig"; sourceTree = "<group>"; };
+		029266DE220C1403002CADA5 /* MurmurHashDemoMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MurmurHashDemoMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		029266E1220C1403002CADA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		029266E3220C1403002CADA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		029266E5220C1404002CADA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		029266E8220C1404002CADA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		029266EA220C1404002CADA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029266EB220C1404002CADA5 /* MurmurHashDemoMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MurmurHashDemoMacOS.entitlements; sourceTree = "<group>"; };
+		0E23775481C6DA10EC2771CD /* Pods_MurmurHashDemoMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00C7047BF670528057B21EE /* Pods-MurmurHashDemoMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoMacOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		029266DB220C1403002CADA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C348A3065414C58AC891C6B /* Pods_MurmurHashDemoMacOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01059F82B63DAE171BF6C50B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E23775481C6DA10EC2771CD /* Pods_MurmurHashDemoMacOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		029266D5220C1403002CADA5 = {
+			isa = PBXGroup;
+			children = (
+				029266E0220C1403002CADA5 /* MurmurHashDemoMacOS */,
+				029266DF220C1403002CADA5 /* Products */,
+				0FD1267F43BC7813B6CD253A /* Pods */,
+				01059F82B63DAE171BF6C50B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		029266DF220C1403002CADA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				029266DE220C1403002CADA5 /* MurmurHashDemoMacOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		029266E0220C1403002CADA5 /* MurmurHashDemoMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				029266E1220C1403002CADA5 /* AppDelegate.swift */,
+				029266E3220C1403002CADA5 /* ViewController.swift */,
+				029266E5220C1404002CADA5 /* Assets.xcassets */,
+				029266E7220C1404002CADA5 /* Main.storyboard */,
+				029266EA220C1404002CADA5 /* Info.plist */,
+				029266EB220C1404002CADA5 /* MurmurHashDemoMacOS.entitlements */,
+			);
+			path = MurmurHashDemoMacOS;
+			sourceTree = "<group>";
+		};
+		0FD1267F43BC7813B6CD253A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				000678B241E6919C14422D61 /* Pods-MurmurHashDemoMacOS.debug.xcconfig */,
+				C00C7047BF670528057B21EE /* Pods-MurmurHashDemoMacOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		029266DD220C1403002CADA5 /* MurmurHashDemoMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029266EE220C1404002CADA5 /* Build configuration list for PBXNativeTarget "MurmurHashDemoMacOS" */;
+			buildPhases = (
+				23761E34DBB9511FC7034D6E /* [CP] Check Pods Manifest.lock */,
+				029266DA220C1403002CADA5 /* Sources */,
+				029266DB220C1403002CADA5 /* Frameworks */,
+				029266DC220C1403002CADA5 /* Resources */,
+				C31315078BF783D6E551432C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MurmurHashDemoMacOS;
+			productName = MurmurHashDemoMacOS;
+			productReference = 029266DE220C1403002CADA5 /* MurmurHashDemoMacOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		029266D6220C1403002CADA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = MurmurHashDemoMacOS;
+				TargetAttributes = {
+					029266DD220C1403002CADA5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 029266D9220C1403002CADA5 /* Build configuration list for PBXProject "MurmurHashDemoMacOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 029266D5220C1403002CADA5;
+			productRefGroup = 029266DF220C1403002CADA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				029266DD220C1403002CADA5 /* MurmurHashDemoMacOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		029266DC220C1403002CADA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029266E6220C1404002CADA5 /* Assets.xcassets in Resources */,
+				029266E9220C1404002CADA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23761E34DBB9511FC7034D6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MurmurHashDemoMacOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C31315078BF783D6E551432C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MurmurHash-Swift/MurmurHash_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MurmurHash_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		029266DA220C1403002CADA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				029266E4220C1403002CADA5 /* ViewController.swift in Sources */,
+				029266E2220C1403002CADA5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		029266E7220C1404002CADA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				029266E8220C1404002CADA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		029266EC220C1404002CADA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		029266ED220C1404002CADA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		029266EF220C1404002CADA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 000678B241E6919C14422D61 /* Pods-MurmurHashDemoMacOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MurmurHashDemoMacOS/MurmurHashDemoMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MurmurHashDemoMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoMacOS.MurmurHashDemoMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		029266F0220C1404002CADA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C00C7047BF670528057B21EE /* Pods-MurmurHashDemoMacOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MurmurHashDemoMacOS/MurmurHashDemoMacOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MurmurHashDemoMacOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoMacOS.MurmurHashDemoMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		029266D9220C1403002CADA5 /* Build configuration list for PBXProject "MurmurHashDemoMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029266EC220C1404002CADA5 /* Debug */,
+				029266ED220C1404002CADA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		029266EE220C1404002CADA5 /* Build configuration list for PBXNativeTarget "MurmurHashDemoMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				029266EF220C1404002CADA5 /* Debug */,
+				029266F0220C1404002CADA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 029266D6220C1403002CADA5 /* Project object */;
+}

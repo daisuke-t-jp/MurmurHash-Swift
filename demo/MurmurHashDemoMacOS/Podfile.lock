@@ -1,0 +1,16 @@
+PODS:
+  - MurmurHash-Swift (1.0.0)
+
+DEPENDENCIES:
+  - MurmurHash-Swift (from `../../`)
+
+EXTERNAL SOURCES:
+  MurmurHash-Swift:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  MurmurHash-Swift: 92043951d81aba4f907eda928d4a946a63b9eada
+
+PODFILE CHECKSUM: fbd6152bac18e2f0984e86e52ff13e5f9b0e1d32
+
+COCOAPODS: 1.6.0
