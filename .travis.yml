@@ -1,0 +1,22 @@
+language: objective-c
+osx_image: xcode10
+
+env:
+  global:
+
+before_install:
+
+script:
+  - swift --version
+  
+  # macOS
+  - xcodebuild clean -project "MurmurHash/MurmurHash.xcodeproj" 
+  - xcodebuild test -project "MurmurHash/MurmurHash.xcodeproj" -scheme "MurmurHash-macOS" -destination "platform=OS X" -configuration Debug
+
+  # iOS
+  - xcodebuild clean -project "MurmurHash/MurmurHash.xcodeproj" 
+  - xcodebuild test -project "MurmurHash/MurmurHash.xcodeproj" -scheme "MurmurHash-iOS" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone X" -configuration Debug
+
+branches:
+  only: 
+      - master
