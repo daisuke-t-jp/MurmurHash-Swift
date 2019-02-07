@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0290FBB9220C01610076E82F /* MurmurHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CB1FA220A9D6C00FA2648 /* MurmurHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0290FBBB220C01610076E82F /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB202220A9D8100FA2648 /* MurmurHash3.swift */; };
+		0290FBC7220C03F40076E82F /* MurmurHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */; };
+		0290FBD5220C0A7F0076E82F /* MurmurHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0290FBC1220C01610076E82F /* MurmurHash.framework */; };
 		029CB1FC220A9D6C00FA2648 /* MurmurHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CB1FA220A9D6C00FA2648 /* MurmurHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		029CB203220A9D8100FA2648 /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB202220A9D8100FA2648 /* MurmurHash3.swift */; };
 		029CB20D220ACBD200FA2648 /* MurmurHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */; };
@@ -14,6 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0290FBD2220C06090076E82F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 029CB1EE220A9D6C00FA2648 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0290FBB7220C01610076E82F;
+			remoteInfo = "MurmurHash-macOS";
+		};
 		029CB210220ACBD200FA2648 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 029CB1EE220A9D6C00FA2648 /* Project object */;
@@ -24,16 +35,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0290FBC1220C01610076E82F /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0290FBCE220C03F40076E82F /* MurmurHashTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029CB1F7220A9D6C00FA2648 /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		029CB1FA220A9D6C00FA2648 /* MurmurHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MurmurHash.h; sourceTree = "<group>"; };
 		029CB1FB220A9D6C00FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029CB202220A9D8100FA2648 /* MurmurHash3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHash3.swift; sourceTree = "<group>"; };
-		029CB20A220ACBD200FA2648 /* MurmurHashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MurmurHashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		029CB20A220ACBD200FA2648 /* MurmurHashTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashTests.swift; sourceTree = "<group>"; };
 		029CB20E220ACBD200FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0290FBBC220C01610076E82F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0290FBC8220C03F40076E82F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0290FBD5220C0A7F0076E82F /* MurmurHash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		029CB1F4220A9D6C00FA2648 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,12 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0290FBD4220C0A7F0076E82F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		029CB1ED220A9D6C00FA2648 = {
 			isa = PBXGroup;
 			children = (
 				029CB1F9220A9D6C00FA2648 /* MurmurHash */,
 				029CB20B220ACBD200FA2648 /* MurmurHashTests */,
 				029CB1F8220A9D6C00FA2648 /* Products */,
+				0290FBD4220C0A7F0076E82F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				029CB1F7220A9D6C00FA2648 /* MurmurHash.framework */,
-				029CB20A220ACBD200FA2648 /* MurmurHashTests.xctest */,
+				029CB20A220ACBD200FA2648 /* MurmurHashTests-iOS.xctest */,
+				0290FBC1220C01610076E82F /* MurmurHash.framework */,
+				0290FBCE220C03F40076E82F /* MurmurHashTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +130,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0290FBB8220C01610076E82F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0290FBB9220C01610076E82F /* MurmurHash.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		029CB1F2220A9D6C00FA2648 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,9 +149,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		029CB1F6220A9D6C00FA2648 /* MurmurHash */ = {
+		0290FBB7220C01610076E82F /* MurmurHash-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 029CB1FF220A9D6C00FA2648 /* Build configuration list for PBXNativeTarget "MurmurHash" */;
+			buildConfigurationList = 0290FBBE220C01610076E82F /* Build configuration list for PBXNativeTarget "MurmurHash-macOS" */;
+			buildPhases = (
+				0290FBB8220C01610076E82F /* Headers */,
+				0290FBBA220C01610076E82F /* Sources */,
+				0290FBBC220C01610076E82F /* Frameworks */,
+				0290FBBD220C01610076E82F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MurmurHash-macOS";
+			productName = MurmurHash;
+			productReference = 0290FBC1220C01610076E82F /* MurmurHash.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0290FBC3220C03F40076E82F /* MurmurHashTests-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0290FBCB220C03F40076E82F /* Build configuration list for PBXNativeTarget "MurmurHashTests-macOS" */;
+			buildPhases = (
+				0290FBC6220C03F40076E82F /* Sources */,
+				0290FBC8220C03F40076E82F /* Frameworks */,
+				0290FBCA220C03F40076E82F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0290FBD3220C06090076E82F /* PBXTargetDependency */,
+			);
+			name = "MurmurHashTests-macOS";
+			productName = MurmurHashTests;
+			productReference = 0290FBCE220C03F40076E82F /* MurmurHashTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		029CB1F6220A9D6C00FA2648 /* MurmurHash-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 029CB1FF220A9D6C00FA2648 /* Build configuration list for PBXNativeTarget "MurmurHash-iOS" */;
 			buildPhases = (
 				029CB1F2220A9D6C00FA2648 /* Headers */,
 				029CB1F3220A9D6C00FA2648 /* Sources */,
@@ -116,14 +198,14 @@
 			);
 			dependencies = (
 			);
-			name = MurmurHash;
+			name = "MurmurHash-iOS";
 			productName = MurmurHash;
 			productReference = 029CB1F7220A9D6C00FA2648 /* MurmurHash.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		029CB209220ACBD200FA2648 /* MurmurHashTests */ = {
+		029CB209220ACBD200FA2648 /* MurmurHashTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 029CB212220ACBD200FA2648 /* Build configuration list for PBXNativeTarget "MurmurHashTests" */;
+			buildConfigurationList = 029CB212220ACBD200FA2648 /* Build configuration list for PBXNativeTarget "MurmurHashTests-iOS" */;
 			buildPhases = (
 				029CB206220ACBD200FA2648 /* Sources */,
 				029CB207220ACBD200FA2648 /* Frameworks */,
@@ -134,9 +216,9 @@
 			dependencies = (
 				029CB211220ACBD200FA2648 /* PBXTargetDependency */,
 			);
-			name = MurmurHashTests;
+			name = "MurmurHashTests-iOS";
 			productName = MurmurHashTests;
-			productReference = 029CB20A220ACBD200FA2648 /* MurmurHashTests.xctest */;
+			productReference = 029CB20A220ACBD200FA2648 /* MurmurHashTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -170,13 +252,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				029CB1F6220A9D6C00FA2648 /* MurmurHash */,
-				029CB209220ACBD200FA2648 /* MurmurHashTests */,
+				029CB1F6220A9D6C00FA2648 /* MurmurHash-iOS */,
+				0290FBB7220C01610076E82F /* MurmurHash-macOS */,
+				029CB209220ACBD200FA2648 /* MurmurHashTests-iOS */,
+				0290FBC3220C03F40076E82F /* MurmurHashTests-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0290FBBD220C01610076E82F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0290FBCA220C03F40076E82F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		029CB1F5220A9D6C00FA2648 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +292,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0290FBBA220C01610076E82F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0290FBBB220C01610076E82F /* MurmurHash3.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0290FBC6220C03F40076E82F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0290FBC7220C03F40076E82F /* MurmurHashTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		029CB1F3220A9D6C00FA2648 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,14 +327,118 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0290FBD3220C06090076E82F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0290FBB7220C01610076E82F /* MurmurHash-macOS */;
+			targetProxy = 0290FBD2220C06090076E82F /* PBXContainerItemProxy */;
+		};
 		029CB211220ACBD200FA2648 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 029CB1F6220A9D6C00FA2648 /* MurmurHash */;
+			target = 029CB1F6220A9D6C00FA2648 /* MurmurHash-iOS */;
 			targetProxy = 029CB210220ACBD200FA2648 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0290FBBF220C01610076E82F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MurmurHash/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-macOS";
+				PRODUCT_NAME = MurmurHash;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0290FBC0220C01610076E82F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MurmurHash/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-macOS";
+				PRODUCT_NAME = MurmurHash;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0290FBCC220C03F40076E82F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MurmurHashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0290FBCD220C03F40076E82F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MurmurHashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		029CB1FD220A9D6C00FA2648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -253,7 +471,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -274,6 +492,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -317,7 +536,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -332,6 +551,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -360,8 +580,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-iOS";
+				PRODUCT_NAME = MurmurHash;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -386,8 +606,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-iOS";
+				PRODUCT_NAME = MurmurHash;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,7 +617,10 @@
 		029CB213220ACBD200FA2648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MurmurHashTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,6 +629,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,7 +638,10 @@
 		029CB214220ACBD200FA2648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MurmurHashTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +650,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHashTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,6 +659,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0290FBBE220C01610076E82F /* Build configuration list for PBXNativeTarget "MurmurHash-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0290FBBF220C01610076E82F /* Debug */,
+				0290FBC0220C01610076E82F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0290FBCB220C03F40076E82F /* Build configuration list for PBXNativeTarget "MurmurHashTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0290FBCC220C03F40076E82F /* Debug */,
+				0290FBCD220C03F40076E82F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		029CB1F1220A9D6C00FA2648 /* Build configuration list for PBXProject "MurmurHash" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -440,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		029CB1FF220A9D6C00FA2648 /* Build configuration list for PBXNativeTarget "MurmurHash" */ = {
+		029CB1FF220A9D6C00FA2648 /* Build configuration list for PBXNativeTarget "MurmurHash-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				029CB200220A9D6C00FA2648 /* Debug */,
@@ -449,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		029CB212220ACBD200FA2648 /* Build configuration list for PBXNativeTarget "MurmurHashTests" */ = {
+		029CB212220ACBD200FA2648 /* Build configuration list for PBXNativeTarget "MurmurHashTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				029CB213220ACBD200FA2648 /* Debug */,
