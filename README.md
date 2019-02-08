@@ -9,8 +9,11 @@
 
 # What is this?
 
-This is **MurmurHash** framework by Swift.  
+This is **MurmurHash** framework in Swift.  
 Framework include *MurmurHash3 x86_32, x86_128, x64_128* functions.  
+  
+Reference :
+- [MurmurHash](https://en.wikipedia.org/wiki/MurmurHash)
 
 
 # Install
