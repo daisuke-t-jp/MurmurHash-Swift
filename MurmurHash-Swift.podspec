@@ -1,17 +1,42 @@
-Pod::Spec.new do |s|
-s.name         = "MurmurHash-Swift"
-s.version      = "1.0.1"
-s.summary      = "MurmurHash framework by Swift."
-s.homepage     = "https://github.com/daisuke-t-jp/MurmurHash-Swift"
-s.screenshots  = "https://raw.githubusercontent.com/daisuke-t-jp/MurmurHash-Swift/master/doc/header.png"
-s.license      = "MIT"
-s.author       = { "daisuke-t-jp" => "daisuke.t.jp@gmail.com" }
+Pod::Spec.new do |spec|
 
-s.requires_arc = true
-s.swift_version  = "4.2"
-s.ios.deployment_target = "10.0"
-s.osx.deployment_target = "10.12"
+  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.name         = "MurmurHash-Swift"
+  spec.version      = "1.0.1"
+  spec.summary      = "MurmurHash framework in Swift."
 
-s.source       = { :git => "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", :tag => s.version }
-s.source_files  = 'MurmurHash/MurmurHash/*.{h,swift}'
+  spec.description  = <<-DESC
+                   This is "MurmurHash" framework in Swift.
+                   Framework include "MurmurHash3 x86_32, x86_128, x64_128" functions.
+                   DESC
+
+  spec.homepage     = "https://github.com/daisuke-t-jp/MurmurHash-Swift"
+  spec.screenshots  = "https://raw.githubusercontent.com/daisuke-t-jp/MurmurHash-Swift/master/doc/header.png"
+
+
+  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
+
+
+  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.author       = { "daisuke-t-jp" => "daisuke.t.jp@gmail.com" }
+
+
+  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.ios.deployment_target = "10.0"
+  spec.osx.deployment_target = "10.12"
+
+
+  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.source       = { :git => "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", :tag => "#{spec.version}" }
+
+
+  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.source_files  = "MurmurHash/MurmurHash/*.{h,swift}"
+
+
+  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  spec.swift_version = "4.2"
+  spec.requires_arc = true
+
 end
