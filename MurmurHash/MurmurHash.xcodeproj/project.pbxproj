@@ -358,7 +358,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
 				PRODUCT_NAME = MurmurHash;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -386,7 +386,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
 				PRODUCT_NAME = MurmurHash;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -580,7 +580,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
 				PRODUCT_NAME = MurmurHash;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -606,7 +606,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.MurmurHash.MurmurHash-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHash.MurmurHash;
 				PRODUCT_NAME = MurmurHash;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
