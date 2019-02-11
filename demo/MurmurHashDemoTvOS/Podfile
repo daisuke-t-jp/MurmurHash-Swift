@@ -1,0 +1,8 @@
+platform :tvos, '12.0'
+use_frameworks!
+
+target 'MurmurHashDemoTvOS' do
+pod 'MurmurHash-Swift', :path => "../../"
+end
+
+

@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E2FD74A37A512372B857F1B /* Pods_MurmurHashDemoTvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DE430E3518124761F62DB6 /* Pods_MurmurHashDemoTvOS.framework */; };
+		7E3D40D92211512300A66B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40D82211512300A66B74 /* AppDelegate.swift */; };
+		7E3D40DB2211512300A66B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40DA2211512300A66B74 /* ViewController.swift */; };
+		7E3D40DE2211512300A66B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3D40DC2211512300A66B74 /* Main.storyboard */; };
+		7E3D40E02211512400A66B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3D40DF2211512400A66B74 /* Assets.xcassets */; };
+		7E3D40EB2211512500A66B74 /* MurmurHashDemoTvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E3D40E72211512500A66B74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3D40CD2211512300A66B74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E3D40D42211512300A66B74;
+			remoteInfo = MurmurHashDemoTvOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.release.xcconfig"; sourceTree = "<group>"; };
+		70DE430E3518124761F62DB6 /* Pods_MurmurHashDemoTvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoTvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MurmurHashDemoTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3D40D82211512300A66B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E3D40DA2211512300A66B74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E3D40DD2211512300A66B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E3D40DF2211512400A66B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E3D40E12211512400A66B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MurmurHashDemoTvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashDemoTvOSTests.swift; sourceTree = "<group>"; };
+		7E3D40EC2211512500A66B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E3D40D22211512300A66B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E2FD74A37A512372B857F1B /* Pods_MurmurHashDemoTvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3D40E32211512500A66B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41A21B95D2FE033317862816 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70DE430E3518124761F62DB6 /* Pods_MurmurHashDemoTvOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63CAB7B473BAA252A64E0E17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */,
+				4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7E3D40CC2211512300A66B74 = {
+			isa = PBXGroup;
+			children = (
+				7E3D40D72211512300A66B74 /* MurmurHashDemoTvOS */,
+				7E3D40E92211512500A66B74 /* MurmurHashDemoTvOSTests */,
+				7E3D40D62211512300A66B74 /* Products */,
+				63CAB7B473BAA252A64E0E17 /* Pods */,
+				41A21B95D2FE033317862816 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7E3D40D62211512300A66B74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */,
+				7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3D40D72211512300A66B74 /* MurmurHashDemoTvOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E3D40D82211512300A66B74 /* AppDelegate.swift */,
+				7E3D40DA2211512300A66B74 /* ViewController.swift */,
+				7E3D40DC2211512300A66B74 /* Main.storyboard */,
+				7E3D40DF2211512400A66B74 /* Assets.xcassets */,
+				7E3D40E12211512400A66B74 /* Info.plist */,
+			);
+			path = MurmurHashDemoTvOS;
+			sourceTree = "<group>";
+		};
+		7E3D40E92211512500A66B74 /* MurmurHashDemoTvOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */,
+				7E3D40EC2211512500A66B74 /* Info.plist */,
+			);
+			path = MurmurHashDemoTvOSTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E3D40D42211512300A66B74 /* MurmurHashDemoTvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E3D40EF2211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOS" */;
+			buildPhases = (
+				CE6B009B71B520D7C852B1A8 /* [CP] Check Pods Manifest.lock */,
+				7E3D40D12211512300A66B74 /* Sources */,
+				7E3D40D22211512300A66B74 /* Frameworks */,
+				7E3D40D32211512300A66B74 /* Resources */,
+				E65BAED676657E99CB6713C3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MurmurHashDemoTvOS;
+			productName = MurmurHashDemoTvOS;
+			productReference = 7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E3D40E52211512500A66B74 /* MurmurHashDemoTvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E3D40F22211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOSTests" */;
+			buildPhases = (
+				7E3D40E22211512500A66B74 /* Sources */,
+				7E3D40E32211512500A66B74 /* Frameworks */,
+				7E3D40E42211512500A66B74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E3D40E82211512500A66B74 /* PBXTargetDependency */,
+			);
+			name = MurmurHashDemoTvOSTests;
+			productName = MurmurHashDemoTvOSTests;
+			productReference = 7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E3D40CD2211512300A66B74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = MurmurHashDemoTvOS;
+				TargetAttributes = {
+					7E3D40D42211512300A66B74 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					7E3D40E52211512500A66B74 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7E3D40D42211512300A66B74;
+					};
+				};
+			};
+			buildConfigurationList = 7E3D40D02211512300A66B74 /* Build configuration list for PBXProject "MurmurHashDemoTvOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E3D40CC2211512300A66B74;
+			productRefGroup = 7E3D40D62211512300A66B74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E3D40D42211512300A66B74 /* MurmurHashDemoTvOS */,
+				7E3D40E52211512500A66B74 /* MurmurHashDemoTvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E3D40D32211512300A66B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3D40E02211512400A66B74 /* Assets.xcassets in Resources */,
+				7E3D40DE2211512300A66B74 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3D40E42211512500A66B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE6B009B71B520D7C852B1A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MurmurHashDemoTvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E65BAED676657E99CB6713C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MurmurHash-Swift/MurmurHash_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MurmurHash_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E3D40D12211512300A66B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3D40DB2211512300A66B74 /* ViewController.swift in Sources */,
+				7E3D40D92211512300A66B74 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3D40E22211512500A66B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3D40EB2211512500A66B74 /* MurmurHashDemoTvOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E3D40E82211512500A66B74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E3D40D42211512300A66B74 /* MurmurHashDemoTvOS */;
+			targetProxy = 7E3D40E72211512500A66B74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E3D40DC2211512300A66B74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E3D40DD2211512300A66B74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E3D40ED2211512500A66B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+			};
+			name = Debug;
+		};
+		7E3D40EE2211512500A66B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 12.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E3D40F02211512500A66B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MurmurHashDemoTvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
+		7E3D40F12211512500A66B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MurmurHashDemoTvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Release;
+		};
+		7E3D40F32211512500A66B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MurmurHashDemoTvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MurmurHashDemoTvOS.app/MurmurHashDemoTvOS";
+			};
+			name = Debug;
+		};
+		7E3D40F42211512500A66B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MurmurHashDemoTvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MurmurHashDemoTvOS.app/MurmurHashDemoTvOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E3D40D02211512300A66B74 /* Build configuration list for PBXProject "MurmurHashDemoTvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3D40ED2211512500A66B74 /* Debug */,
+				7E3D40EE2211512500A66B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E3D40EF2211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3D40F02211512500A66B74 /* Debug */,
+				7E3D40F12211512500A66B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E3D40F22211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3D40F32211512500A66B74 /* Debug */,
+				7E3D40F42211512500A66B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E3D40CD2211512300A66B74 /* Project object */;
+}
