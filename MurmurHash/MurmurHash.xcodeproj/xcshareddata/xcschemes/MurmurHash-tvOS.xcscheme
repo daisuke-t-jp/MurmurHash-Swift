@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7E3D40B122114F8B00A66B74"
-               BuildableName = "MurmurHash_tvOS.framework"
+               BuildableName = "MurmurHash.framework"
                BlueprintName = "MurmurHash-tvOS"
                ReferencedContainer = "container:MurmurHash.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E3D40B122114F8B00A66B74"
-            BuildableName = "MurmurHash_tvOS.framework"
+            BuildableName = "MurmurHash.framework"
             BlueprintName = "MurmurHash-tvOS"
             ReferencedContainer = "container:MurmurHash.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E3D40B122114F8B00A66B74"
-            BuildableName = "MurmurHash_tvOS.framework"
+            BuildableName = "MurmurHash.framework"
             BlueprintName = "MurmurHash-tvOS"
             ReferencedContainer = "container:MurmurHash.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7E3D40B122114F8B00A66B74"
-            BuildableName = "MurmurHash_tvOS.framework"
+            BuildableName = "MurmurHash.framework"
             BlueprintName = "MurmurHash-tvOS"
             ReferencedContainer = "container:MurmurHash.xcodeproj">
          </BuildableReference>
