@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.ios.deployment_target = "10.0"
   spec.osx.deployment_target = "10.12"
+  spec.tvos.deployment_target = "12.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
