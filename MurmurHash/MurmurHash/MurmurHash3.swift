@@ -344,7 +344,7 @@ public class MurmurHash3 {
 		let c1: UInt64 = 0x87c37b91114253d5
 		let c2: UInt64 = 0x4cf5ad432745937f
 		
-		let nblocks = array.count / 16
+		let nblocks = array.count >> 4
 		var h1 = UInt64(seed)
 		var h2 = UInt64(seed)
 
@@ -354,8 +354,8 @@ public class MurmurHash3 {
 		 */
 		for i in 0..<nblocks {
 
-			var k1 = block64(array, index: i * 2 + 0)
-			var k2 = block64(array, index: i * 2 + 1)
+			var k1 = block64(array, index: i << 1 + 0)
+			var k2 = block64(array, index: i << 1 + 1)
 
 			k1 &*= c1
 			k1 = rotl(k1, r: 31)
@@ -385,31 +385,31 @@ public class MurmurHash3 {
 		
 		switch array.count & 15 {
 		case 15:
-			k2 ^= UInt64(array[nblocks * 16 + 14]) << 48
+			k2 ^= UInt64(array[nblocks << 4 + 14]) << 48
 			fallthrough
 
 		case 14:
-			k2 ^= UInt64(array[nblocks * 16 + 13]) << 40
+			k2 ^= UInt64(array[nblocks << 4 + 13]) << 40
 			fallthrough
 
 		case 13:
-			k2 ^= UInt64(array[nblocks * 16 + 12]) << 32
+			k2 ^= UInt64(array[nblocks << 4 + 12]) << 32
 			fallthrough
 
 		case 12:
-			k2 ^= UInt64(array[nblocks * 16 + 11]) << 24
+			k2 ^= UInt64(array[nblocks << 4 + 11]) << 24
 			fallthrough
 
 		case 11:
-			k2 ^= UInt64(array[nblocks * 16 + 10]) << 16
+			k2 ^= UInt64(array[nblocks << 4 + 10]) << 16
 			fallthrough
 
 		case 10:
-			k2 ^= UInt64(array[nblocks * 16 + 9]) << 8
+			k2 ^= UInt64(array[nblocks << 4 + 9]) << 8
 			fallthrough
 
 		case 9:
-			k2 ^= UInt64(array[nblocks * 16 + 8]) << 0
+			k2 ^= UInt64(array[nblocks << 4 + 8]) << 0
 			k2 &*= c2
 			k2 = rotl(k2, r: 33)
 			k2 &*= c1
@@ -418,35 +418,35 @@ public class MurmurHash3 {
 
 			
 		case 8:
-			k1 ^= UInt64(array[nblocks * 16 + 7]) << 56
+			k1 ^= UInt64(array[nblocks << 4 + 7]) << 56
 			fallthrough
 
 		case 7:
-			k1 ^= UInt64(array[nblocks * 16 + 6]) << 48
+			k1 ^= UInt64(array[nblocks << 4 + 6]) << 48
 			fallthrough
 
 		case 6:
-			k1 ^= UInt64(array[nblocks * 16 + 5]) << 40
+			k1 ^= UInt64(array[nblocks << 4 + 5]) << 40
 			fallthrough
 
 		case 5:
-			k1 ^= UInt64(array[nblocks * 16 + 4]) << 32
+			k1 ^= UInt64(array[nblocks << 4 + 4]) << 32
 			fallthrough
 
 		case 4:
-			k1 ^= UInt64(array[nblocks * 16 + 3]) << 24
+			k1 ^= UInt64(array[nblocks << 4 + 3]) << 24
 			fallthrough
 
 		case 3:
-			k1 ^= UInt64(array[nblocks * 16 + 2]) << 16
+			k1 ^= UInt64(array[nblocks << 4 + 2]) << 16
 			fallthrough
 
 		case 2:
-			k1 ^= UInt64(array[nblocks * 16 + 1]) << 8
+			k1 ^= UInt64(array[nblocks << 4 + 1]) << 8
 			fallthrough
 
 		case 1:
-			k1 ^= UInt64(array[nblocks * 16 + 0]) << 0
+			k1 ^= UInt64(array[nblocks << 4 + 0]) << 0
 			k1 &*= c1
 			k1 = rotl(k1, r: 31)
 			k1 &*= c2
