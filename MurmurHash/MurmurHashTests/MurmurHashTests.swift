@@ -539,10 +539,22 @@ class MurmurHashTests: XCTestCase {
 	}
 	
 
-	/*
-	func testPerformanceExample() {
+	
+	// MARK: - Performance
+	func testPerformance() {
         self.measure {
+			let vector = "0123456789ABCDEF0123456"
+
+			for i in 0..<1000 {
+				_ = i
+				
+				for j in 0...vector.count{
+					let vector2 = String.init(vector.prefix(j))
+					_ = MurmurHash3.x86_32(vector2)
+					_ = MurmurHash3.x86_128(vector2)
+					_ = MurmurHash3.x64_128(vector2)
+				}
+			}
         }
     }
-	*/
 }
