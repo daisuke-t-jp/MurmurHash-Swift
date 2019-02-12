@@ -77,7 +77,7 @@ public class MurmurHash3 {
 		let c1: UInt32 = 0xcc9e2d51
 		let c2: UInt32 = 0x1b873593
 		
-		let nblocks = array.count / 4
+		let nblocks = array.count >> 2
 		var h1 = seed
 
 		
@@ -104,15 +104,15 @@ public class MurmurHash3 {
 
 		switch array.count & 3 {
 		case 3:
-			k1 ^= UInt32(array[nblocks * 4 + 2]) << 16
+			k1 ^= UInt32(array[nblocks << 2 + 2]) << 16
 			fallthrough
 
 		case 2:
-			k1 ^= UInt32(array[nblocks * 4 + 1]) << 8
+			k1 ^= UInt32(array[nblocks << 2 + 1]) << 8
 			fallthrough
 
 		case 1:
-			k1 ^= UInt32(array[nblocks * 4 + 0])
+			k1 ^= UInt32(array[nblocks << 2 + 0])
 			k1 &*= c1
 			k1 = rotl(k1, r: 15)
 			k1 &*= c2
