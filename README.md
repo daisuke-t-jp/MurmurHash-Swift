@@ -40,7 +40,7 @@ import MurmurHash_Swift
 ```
 
 
-## Generate x86 32bit Hash
+## Generate x86/32bit Hash
 ```swift
 /**
  * Generate.
@@ -74,7 +74,7 @@ let hash = MurmurHash3.x86_32("Hello World!".data(using: .utf8)!, seed: seed)
 
 
 
-## Generate x86 128bit Hash
+## Generate x86/128bit Hash
 ```swift
 /**
  * Generate.
@@ -108,7 +108,7 @@ let hash = MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: seed)
 
 
 
-## Generate x64 128bit Hash
+## Generate x64/128bit Hash
 ```swift
 /**
  * Generate.
