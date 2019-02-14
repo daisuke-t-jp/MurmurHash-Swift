@@ -44,10 +44,10 @@ public class MurmurHash3 {
 		var block = UInt32(0)
 
 		// NOTE: Supported only little endian.
-		block |= UInt32(array[index << 2 + 0]) << 0
-		block |= UInt32(array[index << 2 + 1]) << 8
-		block |= UInt32(array[index << 2 + 2]) << 16
-		block |= UInt32(array[index << 2 + 3]) << 24
+		block |= UInt32(array[index * 4 + 0]) << 0
+		block |= UInt32(array[index * 4 + 1]) << 8
+		block |= UInt32(array[index * 4 + 2]) << 16
+		block |= UInt32(array[index * 4 + 3]) << 24
 		
 		return block
 	}
@@ -55,16 +55,16 @@ public class MurmurHash3 {
 	static private func block64(_ array: [UInt8], index: Int) -> UInt64 {
 		
 		var block = UInt64(0)
-
+		
 		// NOTE: Supported only little endian.
-		block |= UInt64(array[index << 3 + 0]) << 0
-		block |= UInt64(array[index << 3 + 1]) << 8
-		block |= UInt64(array[index << 3 + 2]) << 16
-		block |= UInt64(array[index << 3 + 3]) << 24
-		block |= UInt64(array[index << 3 + 4]) << 32
-		block |= UInt64(array[index << 3 + 5]) << 40
-		block |= UInt64(array[index << 3 + 6]) << 48
-		block |= UInt64(array[index << 3 + 7]) << 56
+		block |= UInt64(array[index * 8 + 0]) << 0
+		block |= UInt64(array[index * 8 + 1]) << 8
+		block |= UInt64(array[index * 8 + 2]) << 16
+		block |= UInt64(array[index * 8 + 3]) << 24
+		block |= UInt64(array[index * 8 + 4]) << 32
+		block |= UInt64(array[index * 8 + 5]) << 40
+		block |= UInt64(array[index * 8 + 6]) << 48
+		block |= UInt64(array[index * 8 + 7]) << 56
 
 		return block
 	}
