@@ -151,7 +151,7 @@ public class MurmurHash3 {
 		let c3: UInt32 = 0x38b34ae5
 		let c4: UInt32 = 0xa1e38b93
 		
-		let nblocks = array.count >> 4
+		let nblocks = array.count / 16
 		var h1 = seed
 		var h2 = seed
 		var h3 = seed
@@ -163,10 +163,10 @@ public class MurmurHash3 {
 		 */
 		for i in 0..<nblocks {
 			
-			var k1 = block32(array, index: i << 2)
-			var k2 = block32(array, index: i << 2 + 1)
-			var k3 = block32(array, index: i << 2 + 2)
-			var k4 = block32(array, index: i << 2 + 3)
+			var k1 = block32(array, index: i * 4)
+			var k2 = block32(array, index: i * 4 + 1)
+			var k3 = block32(array, index: i * 4 + 2)
+			var k4 = block32(array, index: i * 4 + 3)
 
 			k1 &*= c1
 			k1 = rotl(k1, r: 15)
@@ -216,15 +216,15 @@ public class MurmurHash3 {
 
 		switch array.count & 15 {
 		case 15:
-			k4 ^= UInt32(array[nblocks << 4 + 14]) << 16
+			k4 ^= UInt32(array[nblocks * 16 + 14]) << 16
 			fallthrough
 
 		case 14:
-			k4 ^= UInt32(array[nblocks << 4 + 13]) << 8
+			k4 ^= UInt32(array[nblocks * 16 + 13]) << 8
 			fallthrough
 
 		case 13:
-			k4 ^= UInt32(array[nblocks << 4 + 12]) << 0
+			k4 ^= UInt32(array[nblocks * 16 + 12]) << 0
 			k4 &*= c4
 			k4 = rotl(k4, r: 18)
 			k4 &*= c1
@@ -233,19 +233,19 @@ public class MurmurHash3 {
 
 			
 		case 12:
-			k3 ^= UInt32(array[nblocks << 4 + 11]) << 24
+			k3 ^= UInt32(array[nblocks * 16 + 11]) << 24
 			fallthrough
 
 		case 11:
-			k3 ^= UInt32(array[nblocks << 4 + 10]) << 16
+			k3 ^= UInt32(array[nblocks * 16 + 10]) << 16
 			fallthrough
 
 		case 10:
-			k3 ^= UInt32(array[nblocks << 4 + 9]) << 8
+			k3 ^= UInt32(array[nblocks * 16 + 9]) << 8
 			fallthrough
 
 		case 9:
-			k3 ^= UInt32(array[nblocks << 4 + 8]) << 0
+			k3 ^= UInt32(array[nblocks * 16 + 8]) << 0
 			k3 &*= c3
 			k3 = rotl(k3, r: 17)
 			k3 &*= c4
@@ -254,19 +254,19 @@ public class MurmurHash3 {
 
 
 		case 8:
-			k2 ^= UInt32(array[nblocks << 4 + 7]) << 24
+			k2 ^= UInt32(array[nblocks * 16 + 7]) << 24
 			fallthrough
 
 		case 7:
-			k2 ^= UInt32(array[nblocks << 4 + 6]) << 16
+			k2 ^= UInt32(array[nblocks * 16 + 6]) << 16
 			fallthrough
 
 		case 6:
-			k2 ^= UInt32(array[nblocks << 4 + 5]) << 8
+			k2 ^= UInt32(array[nblocks * 16 + 5]) << 8
 			fallthrough
 
 		case 5:
-			k2 ^= UInt32(array[nblocks << 4 + 4]) << 0
+			k2 ^= UInt32(array[nblocks * 16 + 4]) << 0
 			k2 &*= c2
 			k2 = rotl(k2, r: 16)
 			k2 &*= c3
@@ -275,19 +275,19 @@ public class MurmurHash3 {
 
 			
 		case 4:
-			k1 ^= UInt32(array[nblocks << 4 + 3]) << 24
+			k1 ^= UInt32(array[nblocks * 16 + 3]) << 24
 			fallthrough
 
 		case 3:
-			k1 ^= UInt32(array[nblocks << 4 + 2]) << 16
+			k1 ^= UInt32(array[nblocks * 16 + 2]) << 16
 			fallthrough
 
 		case 2:
-			k1 ^= UInt32(array[nblocks << 4 + 1]) << 8
+			k1 ^= UInt32(array[nblocks * 16 + 1]) << 8
 			fallthrough
 
 		case 1:
-			k1 ^= UInt32(array[nblocks << 4 + 0]) << 0
+			k1 ^= UInt32(array[nblocks * 16 + 0]) << 0
 			k1 &*= c1
 			k1 = rotl(k1, r: 15)
 			k1 &*= c2
