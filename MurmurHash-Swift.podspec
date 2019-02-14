@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "MurmurHash-Swift"
-  spec.version      = "1.0.5"
+  spec.version      = "1.0.6"
   spec.summary      = "MurmurHash framework in Swift."
 
   spec.description  = <<-DESC
