@@ -10,10 +10,10 @@
 # What is this?
 
 This is **MurmurHash** framework in Swift.  
-Framework include *MurmurHash3 x86_32, x86_128, x64_128* functions.  
+Framework include *x86_32, x86_128, x64_128* functions.  
   
 Reference :
-- [MurmurHash](https://en.wikipedia.org/wiki/MurmurHash)
+- [MurmurHash - Wikipedia](https://en.wikipedia.org/wiki/MurmurHash)
 
 
 # Install
@@ -30,15 +30,18 @@ end
 ```
 
 
+
 # Usage
-``` swift
 
+## Import framework
+
+```swift
 import MurmurHash_Swift
+```
 
 
-
-// MARK: - MurmurHash3 x86 32bit.
-
+## Generate x86 32bit Hash
+```swift
 /**
  * Generate.
  */
@@ -67,11 +70,12 @@ let hash = MurmurHash3.x86_32(Array("Hello World!".utf8), seed: seed)
 
 // Generate hash from Data.
 let hash = MurmurHash3.x86_32("Hello World!".data(using: .utf8)!, seed: seed)
+```
 
 
 
-// MARK: - MurmurHash3 x86 128bit.
-
+## Generate x86 128bit Hash
+```swift
 /**
  * Generate.
  */
@@ -100,11 +104,12 @@ let hash = MurmurHash3.x86_128(Array("Hello World!".utf8), seed: seed)
 
 // Generate hash from Data.
 let hash = MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: seed)
+```
 
 
 
-// MARK: - MurmurHash3 x64 128bit.
-
+## Generate x64 128bit Hash
+```swift
 /**
  * Generate.
  */
@@ -133,5 +138,4 @@ let hash = MurmurHash3.x64_128(Array("Hello World!".utf8), seed: seed)
 
 // Generate hash from Data.
 let hash = MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: seed)
-
 ```
