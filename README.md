@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift.svg?branch=master)](https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift)
 
 
-# What is this?
+# Introduction
 
 **MurmurHash** framework in Swift.  
 Framework include *x86_32, x86_128, x64_128* functions.  
