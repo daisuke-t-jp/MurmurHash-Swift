@@ -371,6 +371,27 @@ class MurmurHashTests: XCTestCase {
 		XCTAssertEqual(hash, hash2, String.init(format: "key[%@] seed[%u]", key, seed))
 	}
 	
+	func test_x86_128_file() {
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)
+		let array = [UInt8](data! as Data)
+		
+		var out = (h1: UInt32(0), h2: UInt32(0), h3: UInt32(0), h4: UInt32(0))
+
+		out = MurmurHash3.x86_128(array)
+		XCTAssertEqual(out.h1, 0xf3d97392)
+		XCTAssertEqual(out.h2, 0x44076bea)
+		XCTAssertEqual(out.h3, 0xaaa983c7)
+		XCTAssertEqual(out.h4, 0xcc4c7251)
+
+		out = MurmurHash3.x86_128(array, seed: 0x7fffffff)
+		XCTAssertEqual(out.h1, 0x66529317)
+		XCTAssertEqual(out.h2, 0x3c66d76c)
+		XCTAssertEqual(out.h3, 0xed7111d2)
+		XCTAssertEqual(out.h4, 0xec5190a3)
+	}
+	
 	
 	
 	// MARK: - x64_128
