@@ -13,6 +13,7 @@
 		0290FBEC220C0E9E0076E82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0290FBEB220C0E9E0076E82F /* Assets.xcassets */; };
 		0290FBEF220C0E9E0076E82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0290FBED220C0E9E0076E82F /* LaunchScreen.storyboard */; };
 		37811CC95DEB6E048BED7B53 /* Pods_MurmurHashDemoiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C36D00D75D7E3FAAEAAF09D /* Pods_MurmurHashDemoiOS.framework */; };
+		7EC8133F2219D5BB00786650 /* alice29.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EC8133E2219D5BB00786650 /* alice29.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0290FBEE220C0E9E0076E82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0290FBF0220C0E9E0076E82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C66CA901BF49505892FF5F7 /* Pods-MurmurHashDemoiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoiOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoiOS/Pods-MurmurHashDemoiOS.release.xcconfig"; sourceTree = "<group>"; };
+		7EC8133E2219D5BB00786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = SOURCE_ROOT; };
 		9C36D00D75D7E3FAAEAAF09D /* Pods_MurmurHashDemoiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FE0C50D95389D80F9E16F1 /* Pods-MurmurHashDemoiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoiOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoiOS/Pods-MurmurHashDemoiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				0290FBEB220C0E9E0076E82F /* Assets.xcassets */,
 				0290FBED220C0E9E0076E82F /* LaunchScreen.storyboard */,
 				0290FBF0220C0E9E0076E82F /* Info.plist */,
+				7EC8133E2219D5BB00786650 /* alice29.txt */,
 			);
 			path = MurmurHashDemoiOS;
 			sourceTree = "<group>";
@@ -85,7 +88,6 @@
 				F0FE0C50D95389D80F9E16F1 /* Pods-MurmurHashDemoiOS.debug.xcconfig */,
 				4C66CA901BF49505892FF5F7 /* Pods-MurmurHashDemoiOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +153,7 @@
 			files = (
 				0290FBEF220C0E9E0076E82F /* LaunchScreen.storyboard in Resources */,
 				0290FBEC220C0E9E0076E82F /* Assets.xcassets in Resources */,
+				7EC8133F2219D5BB00786650 /* alice29.txt in Resources */,
 				0290FBEA220C0E990076E82F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
