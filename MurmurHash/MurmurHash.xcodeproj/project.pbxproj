@@ -19,6 +19,9 @@
 		7E3D40C92211502400A66B74 /* MurmurHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CB1FA220A9D6C00FA2648 /* MurmurHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E3D40CA2211503100A66B74 /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB202220A9D8100FA2648 /* MurmurHash3.swift */; };
 		7E3D40CB2211507E00A66B74 /* MurmurHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */; };
+		7EC813392219C69100786650 /* alice29.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EC813382219C69100786650 /* alice29.txt */; };
+		7EC8133A2219C69100786650 /* alice29.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EC813382219C69100786650 /* alice29.txt */; };
+		7EC8133B2219C69100786650 /* alice29.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7EC813382219C69100786650 /* alice29.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		029CB20E220ACBD200FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3D40B222114F8B00A66B74 /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3D40BA22114F8B00A66B74 /* MurmurHashTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC813382219C69100786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 			children = (
 				029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */,
 				029CB20E220ACBD200FA2648 /* Info.plist */,
+				7EC813382219C69100786650 /* alice29.txt */,
 			);
 			path = MurmurHashTests;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC8133A2219C69100786650 /* alice29.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC813392219C69100786650 /* alice29.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC8133B2219C69100786650 /* alice29.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
