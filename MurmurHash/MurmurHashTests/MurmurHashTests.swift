@@ -184,6 +184,16 @@ class MurmurHashTests: XCTestCase {
 		XCTAssertEqual(MurmurHash3.x86_32(key.data(using: .utf8)!, seed: seed), hash, String.init(format: "key[%@] seed[%u]", key, seed))
 	}
 
+	func test_x86_32_file() {
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)
+		let array = [UInt8](data! as Data)
+
+		XCTAssertEqual(MurmurHash3.x86_32(array), 0xcae14481)
+		XCTAssertEqual(MurmurHash3.x86_32(array, seed: 0x7fffffff), 0xf9eb2993)
+	}
+	
 
 	
 	// MARK: - x86_128
