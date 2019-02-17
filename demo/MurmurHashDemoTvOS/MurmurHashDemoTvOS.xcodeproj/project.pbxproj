@@ -12,18 +12,7 @@
 		7E3D40DB2211512300A66B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40DA2211512300A66B74 /* ViewController.swift */; };
 		7E3D40DE2211512300A66B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3D40DC2211512300A66B74 /* Main.storyboard */; };
 		7E3D40E02211512400A66B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3D40DF2211512400A66B74 /* Assets.xcassets */; };
-		7E3D40EB2211512500A66B74 /* MurmurHashDemoTvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		7E3D40E72211512500A66B74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E3D40CD2211512300A66B74 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7E3D40D42211512300A66B74;
-			remoteInfo = MurmurHashDemoTvOS;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -34,9 +23,6 @@
 		7E3D40DD2211512300A66B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3D40DF2211512400A66B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E3D40E12211512400A66B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MurmurHashDemoTvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashDemoTvOSTests.swift; sourceTree = "<group>"; };
-		7E3D40EC2211512500A66B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,13 +32,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E2FD74A37A512372B857F1B /* Pods_MurmurHashDemoTvOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E3D40E32211512500A66B74 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +52,6 @@
 				9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */,
 				4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				7E3D40D72211512300A66B74 /* MurmurHashDemoTvOS */,
-				7E3D40E92211512500A66B74 /* MurmurHashDemoTvOSTests */,
 				7E3D40D62211512300A66B74 /* Products */,
 				63CAB7B473BAA252A64E0E17 /* Pods */,
 				41A21B95D2FE033317862816 /* Frameworks */,
@@ -92,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */,
-				7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,15 +83,6 @@
 				7E3D40E12211512400A66B74 /* Info.plist */,
 			);
 			path = MurmurHashDemoTvOS;
-			sourceTree = "<group>";
-		};
-		7E3D40E92211512500A66B74 /* MurmurHashDemoTvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				7E3D40EA2211512500A66B74 /* MurmurHashDemoTvOSTests.swift */,
-				7E3D40EC2211512500A66B74 /* Info.plist */,
-			);
-			path = MurmurHashDemoTvOSTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,24 +107,6 @@
 			productReference = 7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7E3D40E52211512500A66B74 /* MurmurHashDemoTvOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7E3D40F22211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOSTests" */;
-			buildPhases = (
-				7E3D40E22211512500A66B74 /* Sources */,
-				7E3D40E32211512500A66B74 /* Frameworks */,
-				7E3D40E42211512500A66B74 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7E3D40E82211512500A66B74 /* PBXTargetDependency */,
-			);
-			name = MurmurHashDemoTvOSTests;
-			productName = MurmurHashDemoTvOSTests;
-			productReference = 7E3D40E62211512500A66B74 /* MurmurHashDemoTvOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,10 +119,6 @@
 				TargetAttributes = {
 					7E3D40D42211512300A66B74 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					7E3D40E52211512500A66B74 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 7E3D40D42211512300A66B74;
 					};
 				};
 			};
@@ -191,7 +136,6 @@
 			projectRoot = "";
 			targets = (
 				7E3D40D42211512300A66B74 /* MurmurHashDemoTvOS */,
-				7E3D40E52211512500A66B74 /* MurmurHashDemoTvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,13 +147,6 @@
 			files = (
 				7E3D40E02211512400A66B74 /* Assets.xcassets in Resources */,
 				7E3D40DE2211512300A66B74 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7E3D40E42211512500A66B74 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,23 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7E3D40E22211512500A66B74 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E3D40EB2211512500A66B74 /* MurmurHashDemoTvOSTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		7E3D40E82211512500A66B74 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7E3D40D42211512300A66B74 /* MurmurHashDemoTvOS */;
-			targetProxy = 7E3D40E72211512500A66B74 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7E3D40DC2211512300A66B74 /* Main.storyboard */ = {
@@ -456,46 +377,6 @@
 			};
 			name = Release;
 		};
-		7E3D40F32211512500A66B74 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MurmurHashDemoTvOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MurmurHashDemoTvOS.app/MurmurHashDemoTvOS";
-			};
-			name = Debug;
-		};
-		7E3D40F42211512500A66B74 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MurmurHashDemoTvOSTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MurmurHashDemoTvOS.MurmurHashDemoTvOSTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MurmurHashDemoTvOS.app/MurmurHashDemoTvOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -513,15 +394,6 @@
 			buildConfigurations = (
 				7E3D40F02211512500A66B74 /* Debug */,
 				7E3D40F12211512500A66B74 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7E3D40F22211512500A66B74 /* Build configuration list for PBXNativeTarget "MurmurHashDemoTvOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E3D40F32211512500A66B74 /* Debug */,
-				7E3D40F42211512500A66B74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
