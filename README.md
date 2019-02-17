@@ -9,7 +9,7 @@
 
 # What is this?
 
-This is **MurmurHash** framework in Swift.  
+**MurmurHash** framework in Swift.  
 Framework include *x86_32, x86_128, x64_128* functions.  
   
 Reference :
