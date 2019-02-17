@@ -187,11 +187,10 @@ class MurmurHashTests: XCTestCase {
 	func test_x86_32_file() {
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
-		let data = NSData(contentsOfFile: path)
-		let array = [UInt8](data! as Data)
+		let data = NSData(contentsOfFile: path)! as Data
 
-		XCTAssertEqual(MurmurHash3.x86_32(array), 0xcae14481)
-		XCTAssertEqual(MurmurHash3.x86_32(array, seed: 0x7fffffff), 0xf9eb2993)
+		XCTAssertEqual(MurmurHash3.x86_32(data), 0xcae14481)
+		XCTAssertEqual(MurmurHash3.x86_32(data, seed: 0x7fffffff), 0xf9eb2993)
 	}
 	
 
@@ -374,18 +373,17 @@ class MurmurHashTests: XCTestCase {
 	func test_x86_128_file() {
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
-		let data = NSData(contentsOfFile: path)
-		let array = [UInt8](data! as Data)
-		
+		let data = NSData(contentsOfFile: path)! as Data
+
 		var out = (h1: UInt32(0), h2: UInt32(0), h3: UInt32(0), h4: UInt32(0))
 
-		out = MurmurHash3.x86_128(array)
+		out = MurmurHash3.x86_128(data)
 		XCTAssertEqual(out.h1, 0xf3d97392)
 		XCTAssertEqual(out.h2, 0x44076bea)
 		XCTAssertEqual(out.h3, 0xaaa983c7)
 		XCTAssertEqual(out.h4, 0xcc4c7251)
 
-		out = MurmurHash3.x86_128(array, seed: 0x7fffffff)
+		out = MurmurHash3.x86_128(data, seed: 0x7fffffff)
 		XCTAssertEqual(out.h1, 0x66529317)
 		XCTAssertEqual(out.h2, 0x3c66d76c)
 		XCTAssertEqual(out.h3, 0xed7111d2)
@@ -572,16 +570,15 @@ class MurmurHashTests: XCTestCase {
 	func test_x64_128_file() {
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
-		let data = NSData(contentsOfFile: path)
-		let array = [UInt8](data! as Data)
-		
+		let data = NSData(contentsOfFile: path)! as Data
+
 		var out = (h1: UInt64(0), h2: UInt64(0))
 		
-		out = MurmurHash3.x64_128(array)
+		out = MurmurHash3.x64_128(data)
 		XCTAssertEqual(out.h1, 0xef12617f3e2a5f9a)
 		XCTAssertEqual(out.h2, 0x44b3598f2e09cd50)
 		
-		out = MurmurHash3.x64_128(array, seed: 0x7fffffff)
+		out = MurmurHash3.x64_128(data, seed: 0x7fffffff)
 		XCTAssertEqual(out.h1, 0xc9e3c738ae105764)
 		XCTAssertEqual(out.h2, 0xb1d34bb24aa326c4)
 	}
