@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026E343A221BF0C4008A8531 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E3439221BF0C4008A8531 /* Common.swift */; };
 		029266E2220C1403002CADA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029266E1220C1403002CADA5 /* AppDelegate.swift */; };
 		029266E4220C1403002CADA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029266E3220C1403002CADA5 /* ViewController.swift */; };
 		029266E6220C1404002CADA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029266E5220C1404002CADA5 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		000678B241E6919C14422D61 /* Pods-MurmurHashDemoMacOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoMacOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS.debug.xcconfig"; sourceTree = "<group>"; };
+		026E3439221BF0C4008A8531 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../Common.swift; sourceTree = "<group>"; };
 		029266DE220C1403002CADA5 /* MurmurHashDemoMacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MurmurHashDemoMacOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		029266E1220C1403002CADA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		029266E3220C1403002CADA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		029266E0220C1403002CADA5 /* MurmurHashDemoMacOS */ = {
 			isa = PBXGroup;
 			children = (
+				026E3439221BF0C4008A8531 /* Common.swift */,
 				029266E1220C1403002CADA5 /* AppDelegate.swift */,
 				029266E3220C1403002CADA5 /* ViewController.swift */,
 				029266E5220C1404002CADA5 /* Assets.xcassets */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				029266E4220C1403002CADA5 /* ViewController.swift in Sources */,
+				026E343A221BF0C4008A8531 /* Common.swift in Sources */,
 				029266E2220C1403002CADA5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
