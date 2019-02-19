@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026E343E221BF1AA008A8531 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E343D221BF1AA008A8531 /* Common.swift */; };
 		1E2FD74A37A512372B857F1B /* Pods_MurmurHashDemoTvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DE430E3518124761F62DB6 /* Pods_MurmurHashDemoTvOS.framework */; };
 		7E3D40D92211512300A66B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40D82211512300A66B74 /* AppDelegate.swift */; };
 		7E3D40DB2211512300A66B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3D40DA2211512300A66B74 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		026E343D221BF1AA008A8531 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Common.swift; path = ../../Common.swift; sourceTree = "<group>"; };
 		4CB81CFC40F272CB92417528 /* Pods-MurmurHashDemoTvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.release.xcconfig"; sourceTree = "<group>"; };
 		70DE430E3518124761F62DB6 /* Pods_MurmurHashDemoTvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoTvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3D40D52211512300A66B74 /* MurmurHashDemoTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MurmurHashDemoTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 		7E3D40D72211512300A66B74 /* MurmurHashDemoTvOS */ = {
 			isa = PBXGroup;
 			children = (
+				026E343D221BF1AA008A8531 /* Common.swift */,
 				7E3D40D82211512300A66B74 /* AppDelegate.swift */,
 				7E3D40DA2211512300A66B74 /* ViewController.swift */,
 				7E3D40DC2211512300A66B74 /* Main.storyboard */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3D40DB2211512300A66B74 /* ViewController.swift in Sources */,
+				026E343E221BF1AA008A8531 /* Common.swift in Sources */,
 				7E3D40D92211512300A66B74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
