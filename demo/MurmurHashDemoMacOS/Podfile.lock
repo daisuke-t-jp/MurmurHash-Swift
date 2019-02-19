@@ -1,5 +1,5 @@
 PODS:
-  - MurmurHash-Swift (1.0.6)
+  - MurmurHash-Swift (1.0.7)
 
 DEPENDENCIES:
   - MurmurHash-Swift (from `../../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  MurmurHash-Swift: ec8f94254b57dd7f7e873f56fc044d4fccb6f880
+  MurmurHash-Swift: 95c480899ad434e8a0c8c7b54a910af2ac4f1ca7
 
 PODFILE CHECKSUM: fbd6152bac18e2f0984e86e52ff13e5f9b0e1d32
 
