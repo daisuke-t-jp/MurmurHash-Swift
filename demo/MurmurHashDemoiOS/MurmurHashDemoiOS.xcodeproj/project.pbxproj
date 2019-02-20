@@ -27,7 +27,7 @@
 		0290FBEE220C0E9E0076E82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0290FBF0220C0E9E0076E82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C66CA901BF49505892FF5F7 /* Pods-MurmurHashDemoiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoiOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoiOS/Pods-MurmurHashDemoiOS.release.xcconfig"; sourceTree = "<group>"; };
-		7EC8133E2219D5BB00786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = SOURCE_ROOT; };
+		7EC8133E2219D5BB00786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
 		9C36D00D75D7E3FAAEAAF09D /* Pods_MurmurHashDemoiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FE0C50D95389D80F9E16F1 /* Pods-MurmurHashDemoiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoiOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoiOS/Pods-MurmurHashDemoiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 				0290FBDD220C0E990076E82F /* Sources */,
 				0290FBDE220C0E990076E82F /* Frameworks */,
 				0290FBDF220C0E990076E82F /* Resources */,
-				FE39A715ACD743C5A7A40CBF /* [CP] Embed Pods Frameworks */,
+				4ED02FFE711488D3E0B35D4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,7 +186,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FE39A715ACD743C5A7A40CBF /* [CP] Embed Pods Frameworks */ = {
+		4ED02FFE711488D3E0B35D4B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

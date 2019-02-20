@@ -27,7 +27,7 @@
 		029266EA220C1404002CADA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029266EB220C1404002CADA5 /* MurmurHashDemoMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MurmurHashDemoMacOS.entitlements; sourceTree = "<group>"; };
 		0E23775481C6DA10EC2771CD /* Pods_MurmurHashDemoMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MurmurHashDemoMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EC8133C2219D00600786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = SOURCE_ROOT; };
+		7EC8133C2219D00600786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
 		C00C7047BF670528057B21EE /* Pods-MurmurHashDemoMacOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoMacOS.release.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoMacOS/Pods-MurmurHashDemoMacOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

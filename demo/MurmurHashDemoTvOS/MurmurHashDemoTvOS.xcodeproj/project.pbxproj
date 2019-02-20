@@ -26,7 +26,7 @@
 		7E3D40DD2211512300A66B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3D40DF2211512400A66B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E3D40E12211512400A66B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EC813402219D6B000786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = SOURCE_ROOT; };
+		7EC813402219D6B000786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
 		9466D4D317E72773D3DE1D3D /* Pods-MurmurHashDemoTvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MurmurHashDemoTvOS.debug.xcconfig"; path = "Target Support Files/Pods-MurmurHashDemoTvOS/Pods-MurmurHashDemoTvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
