@@ -33,7 +33,7 @@ Pod::Spec.new do |spec|
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.source_files  = "MurmurHash/MurmurHash/*.{swift}"
+  spec.source_files  = "Sources/MurmurHash/*.{swift}"
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
