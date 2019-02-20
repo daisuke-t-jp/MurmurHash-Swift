@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
 
   spec.description  = <<-DESC
                    "MurmurHash" framework in Swift.
-                   Framework include "MurmurHash3 x86_32, x86_128, x64_128" functions.
+                   A framework includes "MurmurHash3 x86_32, x86_128, x64_128" functions.
                    DESC
 
   spec.homepage     = "https://github.com/daisuke-t-jp/MurmurHash-Swift"

@@ -10,7 +10,7 @@
 # Introduction
 
 **MurmurHash** framework in Swift.  
-Framework include *x86_32, x86_128, x64_128* functions.  
+A framework includes *x86_32, x86_128, x64_128* functions.  
   
 Reference :
 - [MurmurHash - Wikipedia](https://en.wikipedia.org/wiki/MurmurHash)
