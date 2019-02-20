@@ -2,8 +2,9 @@
 ------
 ![Platform](https://img.shields.io/badge/Platform-iOS%2010.0+%20%7C%20macOS%2010.12+%20%7C%20tvOS%2012.0+-blue.svg)
 [![Language Swift%204.2](https://img.shields.io/badge/Language-Swift%204.2-orange.svg)](https://developer.apple.com/swift)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg)](https://github.com/Carthage/Carthage)
 [![Cocoapods](https://img.shields.io/cocoapods/v/MurmurHash-Swift.svg)](https://cocoapods.org/pods/MurmurHash-Swift)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg)](https://github.com/Carthage/Carthage)
+[![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-green.svg)](https://github.com/apple/swift-package-manager)
 [![Build Status](https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift.svg?branch=master)](https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift)
 
 
@@ -17,10 +18,7 @@ Reference :
 
 
 # Install
-### Carthage
-`github "daisuke-t-jp/MurmurHash-Swift"`
-
-### CocoaPods
+## CocoaPods
 ```
 use_frameworks!
 
@@ -29,6 +27,26 @@ pod 'MurmurHash-Swift'
 end
 ```
 
+## Carthage
+`github "daisuke-t-jp/MurmurHash-Swift"`
+
+## Swift Package Manager
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PACKAGE_NAME",
+    targets: [],
+    dependencies: [
+        .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", from: "1.0.0")
+    ]
+    targets: [
+        .target(
+            name: "YOUR_TARGET_NAME",
+            dependencies: ["MurmurHash-Swift"]),
+	]
+)
+```
 
 
 # Usage
