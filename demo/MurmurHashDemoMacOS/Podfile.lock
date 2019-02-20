@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  MurmurHash-Swift: 95c480899ad434e8a0c8c7b54a910af2ac4f1ca7
+  MurmurHash-Swift: 60863a60c206448b63b4cf2087173c411078bc47
 
 PODFILE CHECKSUM: fbd6152bac18e2f0984e86e52ff13e5f9b0e1d32
 
