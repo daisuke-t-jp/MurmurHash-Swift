@@ -52,15 +52,15 @@
 		0290FBC1220C01610076E82F /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0290FBCE220C03F40076E82F /* MurmurHashTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029CB1F7220A9D6C00FA2648 /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		029CB1FA220A9D6C00FA2648 /* MurmurHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MurmurHash.h; path = MurmurHash.h; sourceTree = "<group>"; };
-		029CB1FB220A9D6C00FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
-		029CB202220A9D8100FA2648 /* MurmurHash3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MurmurHash3.swift; path = MurmurHash3.swift; sourceTree = "<group>"; };
+		029CB1FA220A9D6C00FA2648 /* MurmurHash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MurmurHash.h; sourceTree = "<group>"; };
+		029CB1FB220A9D6C00FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		029CB202220A9D8100FA2648 /* MurmurHash3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHash3.swift; sourceTree = "<group>"; };
 		029CB20A220ACBD200FA2648 /* MurmurHashTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MurmurHashTests.swift; path = MurmurHashTests.swift; sourceTree = "<group>"; };
-		029CB20E220ACBD200FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Info.plist; sourceTree = "<group>"; };
+		029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashTests.swift; sourceTree = "<group>"; };
+		029CB20E220ACBD200FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7E3D40B222114F8B00A66B74 /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3D40BA22114F8B00A66B74 /* MurmurHashTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EC813382219C69100786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = alice29.txt; path = alice29.txt; sourceTree = "<group>"; };
+		7EC813382219C69100786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
