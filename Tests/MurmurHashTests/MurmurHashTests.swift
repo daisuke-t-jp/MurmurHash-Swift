@@ -185,12 +185,16 @@ class MurmurHashTests: XCTestCase {
 	}
 
 	func test_x86_32_file() {
+		#if SWIFT_PACKAGE
+		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
-
+		
 		XCTAssertEqual(MurmurHash3.x86_32(data), 0xcae14481)
 		XCTAssertEqual(MurmurHash3.x86_32(data, seed: 0x7fffffff), 0xf9eb2993)
+		#endif
 	}
 	
 
@@ -371,6 +375,9 @@ class MurmurHashTests: XCTestCase {
 	}
 	
 	func test_x86_128_file() {
+		#if SWIFT_PACKAGE
+		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
@@ -388,6 +395,7 @@ class MurmurHashTests: XCTestCase {
 		XCTAssertEqual(out.h2, 0x3c66d76c)
 		XCTAssertEqual(out.h3, 0xed7111d2)
 		XCTAssertEqual(out.h4, 0xec5190a3)
+		#endif
 	}
 	
 	
@@ -568,10 +576,13 @@ class MurmurHashTests: XCTestCase {
 	}
 	
 	func test_x64_128_file() {
+		#if SWIFT_PACKAGE
+		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
-
+		
 		var out = (h1: UInt64(0), h2: UInt64(0))
 		
 		out = MurmurHash3.x64_128(data)
@@ -581,6 +592,7 @@ class MurmurHashTests: XCTestCase {
 		out = MurmurHash3.x64_128(data, seed: 0x7fffffff)
 		XCTAssertEqual(out.h1, 0xc9e3c738ae105764)
 		XCTAssertEqual(out.h2, 0xb1d34bb24aa326c4)
+		#endif
 	}
 
 	
