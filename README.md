@@ -22,7 +22,6 @@ Reference :
   - iOS 10.0+
   - macOS 10.12+
   - tvOS 12.0+
-  - Linux
 - Swift 4.2+
 
 
