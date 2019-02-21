@@ -7,7 +7,11 @@
 //
 
 import XCTest
+#if SWIFT_PACKAGE
+@testable import MurmurHash_Swift
+#else
 @testable import MurmurHash
+#endif
 
 class MurmurHashTests: XCTestCase {
 
