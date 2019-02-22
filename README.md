@@ -1,6 +1,6 @@
 <img src="https://github.com/daisuke-t-jp/MurmurHash-Swift/blob/master/doc/header.png" width="700"></br>
 ------
-![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20macOS%20%7C%20tvOS-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20Linux-blue.svg)
 [![Language Swift%204.2](https://img.shields.io/badge/Language-Swift%204.2-orange.svg)](https://developer.apple.com/swift)
 [![Cocoapods](https://img.shields.io/cocoapods/v/MurmurHash-Swift.svg)](https://cocoapods.org/pods/MurmurHash-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-green.svg)](https://github.com/Carthage/Carthage)
@@ -11,7 +11,7 @@
 # Introduction
 
 **MurmurHash** framework in Swift.  
-A framework includes x86_32, x86_128, x64_128 functions.  
+A framework includes MurmurHash3's x86_32/x86_128/x64_128 functions.  
   
 Reference :
 - [MurmurHash - Wikipedia](https://en.wikipedia.org/wiki/MurmurHash)
@@ -22,6 +22,7 @@ Reference :
   - iOS 10.0+
   - macOS 10.12+
   - tvOS 12.0+
+  - Linux
 - Swift 4.2+
 
 
@@ -65,103 +66,18 @@ let package = Package(
 import MurmurHash_Swift
 ```
 
-
-## Generate x86/32bit Hash
+## Generate Hash
 ```swift
-/**
- * Generate.
- */
-// Generate hash from String.
-let hash = MurmurHash3.x86_32("Hello World!")
-print(String.init(format: "0x%x", hash)) // "0xdc09357d"
+let hash_x86_32 = MurmurHash3.x86_32("Hello World!") // if using seed, e.g. "MurmurHash3.x86_32("Hello World!", seed: 0x7fffffff)"
+// hash_x86_32 -> 0xdc09357d
 
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x86_32(Array("Hello World!".utf8))
+let hash_x86_128 = MurmurHash3.x86_128("Hello World!") // if using seed, e.g. "MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)"
+// hash_x86_128.h1 -> 0x6bee9883
+// hash_x86_128.h2 -> 0xeb1be4f5
+// hash_x86_128.h3 -> 0x9dfb7172
+// hash_x86_128.h4 -> 0xae3fbea9
 
-// Generate hash from Data.
-let hash = MurmurHash3.x86_32("Hello World!".data(using: .utf8)!)
-
-
-/**
- * Using seed.
- */
-let seed = 0x7fffffff
-
-// Generate hash from String.
-let hash = MurmurHash3.x86_32("Hello World!", seed: seed)
-print(String.init(format: "0x%x", hash)) // "0xf98a8b8e"
-
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x86_32(Array("Hello World!".utf8), seed: seed)
-
-// Generate hash from Data.
-let hash = MurmurHash3.x86_32("Hello World!".data(using: .utf8)!, seed: seed)
-```
-
-
-
-## Generate x86/128bit Hash
-```swift
-/**
- * Generate.
- */
-// Generate hash from String.
-let hash = MurmurHash3.x86_128("Hello World!")
-print(String.init(format: "0x%x%x%x%x", hash.h1, hash.h2, hash.h3, hash.h4)) // "0x6bee9883eb1be4f59dfb7172ae3fbea9"
-
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x86_128(Array("Hello World!".utf8))
-
-// Generate hash from Data.
-let hash = MurmurHash3.x86_128("Hello World!".data(using: .utf8)!)
-
-
-/**
- * Using seed.
- */
-let seed = 0x7fffffff
-
-// Generate hash from String.
-let hash = MurmurHash3.x86_128("Hello World!", seed: seed)
-print(String.init(format: "0x%x%x%x%x", hash.h1, hash.h2, hash.h3, hash.h4)) // "0xa8c348436bb9375369e62d2b2cefbb56"
-
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x86_128(Array("Hello World!".utf8), seed: seed)
-
-// Generate hash from Data.
-let hash = MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: seed)
-```
-
-
-
-## Generate x64/128bit Hash
-```swift
-/**
- * Generate.
- */
-// Generate hash from String.
-let hash = MurmurHash3.x64_128("Hello World!")
-print(String.init(format: "0x%lx%lx", hash.h1, hash.h2)) // "0x80025454af3196b2e57813856f452fa6"
-
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x64_128(Array("Hello World!".utf8))
-
-// Generate hash from Data.
-let hash = MurmurHash3.x64_128("Hello World!".data(using: .utf8)!)
-
-
-/**
- * Using seed.
- */
-let seed = 0x7fffffff
-
-// Generate hash from String.
-let hash = MurmurHash3.x64_128("Hello World!", seed: seed)
-print(String.init(format: "0x%lx%lx", hash.h1, hash.h2)) // "0xa8c348436bb9375369e62d2b2cefbb56"
-
-// Generate hash from [UInt8].
-let hash = MurmurHash3.x64_128(Array("Hello World!".utf8), seed: seed)
-
-// Generate hash from Data.
-let hash = MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: seed)
+let hash_x64_128 = MurmurHash3.x64_128("Hello World!") // if using seed, e.g. "MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)"
+// hash_x64_128.h1 -> 0x80025454af3196b2
+// hash_x64_128.h2 -> 0xe57813856f452fa6
 ```
