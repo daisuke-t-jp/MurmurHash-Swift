@@ -205,7 +205,7 @@ class MurmurHashTests: XCTestCase {
 
 	func test_x86_32_file() {
 		#if SWIFT_PACKAGE
-		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		print("[Swift-PM]Skipped UnitTest that used resources.")
 		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
@@ -395,7 +395,7 @@ class MurmurHashTests: XCTestCase {
 	
 	func test_x86_128_file() {
 		#if SWIFT_PACKAGE
-		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		print("[Swift-PM]Skipped UnitTest that used resources.")
 		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
@@ -596,7 +596,7 @@ class MurmurHashTests: XCTestCase {
 	
 	func test_x64_128_file() {
 		#if SWIFT_PACKAGE
-		print("\(self.description)SwiftPM-Building skipped UnitTest that used resources.")
+		print("[Swift-PM]Skipped UnitTest that used resources.")
 		#else
 		let bundle = Bundle(for: type(of: self))
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
