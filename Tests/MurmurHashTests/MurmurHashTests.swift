@@ -15,7 +15,22 @@ import XCTest
 
 class MurmurHashTests: XCTestCase {
 
-    override func setUp() {
+	// MARK: - Property
+	static var allTests = [
+		("test_x86_32", test_x86_32),
+		("test_x86_32_seed", test_x86_32_seed),
+		("test_x86_32_file", test_x86_32_file),
+		("test_x86_128", test_x86_128),
+		("test_x86_128_seed", test_x86_128_seed),
+		("test_x86_128_file", test_x86_128_file),
+		("test_x64_128", test_x64_128),
+		("test_x64_128_seed", test_x64_128_seed),
+		("test_x64_128_file", test_x64_128_file),
+		]
+
+	
+	
+	override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
