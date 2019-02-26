@@ -152,7 +152,7 @@ public extension MurmurHash3 {
 // MARK: - x86 128bit
 public extension MurmurHash3 {
 
-	static public func x86_128(_ array: [UInt8], seed: UInt32 = 0) -> (h1: UInt32, h2: UInt32, h3: UInt32, h4: UInt32) {
+	static public func x86_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt32] {
 
 		let c1: UInt32 = 0x239b961b
 		let c2: UInt32 = 0xab0e9789
@@ -333,14 +333,14 @@ public extension MurmurHash3 {
 		h3 &+= h1
 		h4 &+= h1
 
-		return (h1: h1, h2: h2, h3: h3, h4: h4)
+		return [h1, h2, h3, h4]
 	}
 
-	static public func x86_128(_ string: String, seed: UInt32 = 0) -> (h1: UInt32, h2: UInt32, h3: UInt32, h4: UInt32) {
+	static public func x86_128(_ string: String, seed: UInt32 = 0) -> [UInt32] {
 		return x86_128(Array(string.utf8), seed: seed)
 	}
 	
-	static public func x86_128(_ data: Data, seed: UInt32 = 0) -> (h1: UInt32, h2: UInt32, h3: UInt32, h4: UInt32) {
+	static public func x86_128(_ data: Data, seed: UInt32 = 0) -> [UInt32] {
 		return x86_128([UInt8](data), seed: seed)
 	}
 	
@@ -351,7 +351,7 @@ public extension MurmurHash3 {
 // MARK: - x64 128bit
 public extension MurmurHash3 {
 	
-	static public func x64_128(_ array: [UInt8], seed: UInt32 = 0) -> (h1: UInt64, h2: UInt64) {
+	static public func x64_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt64] {
 
 		let c1: UInt64 = 0x87c37b91114253d5
 		let c2: UInt64 = 0x4cf5ad432745937f
@@ -484,14 +484,14 @@ public extension MurmurHash3 {
 		h1 &+= h2
 		h2 &+= h1
 
-		return (h1: h1, h2: h2)
+		return [h1, h2]
 	}
 
-	static public func x64_128(_ string: String, seed: UInt32 = 0) -> (h1: UInt64, h2: UInt64) {
+	static public func x64_128(_ string: String, seed: UInt32 = 0) -> [UInt64] {
 		return x64_128(Array(string.utf8), seed: seed)
 	}
 
-	static public func x64_128(_ data: Data, seed: UInt32 = 0) -> (h1: UInt64, h2: UInt64) {
+	static public func x64_128(_ data: Data, seed: UInt32 = 0) -> [UInt64] {
 		return x64_128([UInt8](data), seed: seed)
 	}
 
