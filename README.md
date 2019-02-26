@@ -72,12 +72,12 @@ let hash_x86_32 = MurmurHash3.x86_32("Hello World!") // if using seed, e.g. "Mur
 // hash_x86_32 -> 0xdc09357d
 
 let hash_x86_128 = MurmurHash3.x86_128("Hello World!") // if using seed, e.g. "MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)"
-// hash_x86_128.h1 -> 0x6bee9883
-// hash_x86_128.h2 -> 0xeb1be4f5
-// hash_x86_128.h3 -> 0x9dfb7172
-// hash_x86_128.h4 -> 0xae3fbea9
+// hash_x86_128[0] -> 0x6bee9883
+// hash_x86_128[1] -> 0xeb1be4f5
+// hash_x86_128[2] -> 0x9dfb7172
+// hash_x86_128[3] -> 0xae3fbea9
 
 let hash_x64_128 = MurmurHash3.x64_128("Hello World!") // if using seed, e.g. "MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)"
-// hash_x64_128.h1 -> 0x80025454af3196b2
-// hash_x64_128.h2 -> 0xe57813856f452fa6
+// hash_x64_128[0] -> 0x80025454af3196b2
+// hash_x64_128[1] -> 0xe57813856f452fa6
 ```
