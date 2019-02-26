@@ -202,6 +202,7 @@
 				0290FBBA220C01610076E82F /* Sources */,
 				0290FBBC220C01610076E82F /* Frameworks */,
 				0290FBBD220C01610076E82F /* Resources */,
+				02CC4C0B2224D8B7001177C5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -238,6 +239,7 @@
 				029CB1F3220A9D6C00FA2648 /* Sources */,
 				029CB1F4220A9D6C00FA2648 /* Frameworks */,
 				029CB1F5220A9D6C00FA2648 /* Resources */,
+				02CC4C0A2224D8AA001177C5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,6 +276,7 @@
 				7E3D40AE22114F8B00A66B74 /* Sources */,
 				7E3D40AF22114F8B00A66B74 /* Frameworks */,
 				7E3D40B022114F8B00A66B74 /* Resources */,
+				02CC4C0C2224D8BE001177C5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -396,6 +399,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02CC4C0A2224D8AA001177C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed.\"\nfi\n";
+		};
+		02CC4C0B2224D8B7001177C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed.\"\nfi\n";
+		};
+		02CC4C0C2224D8BE001177C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0290FBBA220C01610076E82F /* Sources */ = {
