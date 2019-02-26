@@ -73,9 +73,15 @@ public class MurmurHash3 {
 	
 
 
-// MARK: - x86 32bit
+// MARK: - x86_32
 public extension MurmurHash3 {
 
+	/// Generate hash(x86_32)
+	///
+	/// - Parameters:
+	///   - array: Source data for hashing.
+	///   - seed: Seed for generate hash. Default is 0.
+	/// - Returns: A generated hash.
 	static public func x86_32(_ array: [UInt8], seed: UInt32 = 0) -> UInt32 {
 	
 		let c1: UInt32 = 0xcc9e2d51
@@ -137,10 +143,12 @@ public extension MurmurHash3 {
 		return h1
 	}
 	
+	/// Overload func for "x86_32(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x86_32(_ string: String, seed: UInt32 = 0) -> UInt32 {
 		return x86_32(Array(string.utf8), seed: seed)
 	}
-
+	
+	/// Overload func for "x86_32(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x86_32(_ data: Data, seed: UInt32 = 0) -> UInt32 {
 		return x86_32([UInt8](data), seed: seed)
 	}
@@ -149,9 +157,15 @@ public extension MurmurHash3 {
 
 
 
-// MARK: - x86 128bit
+// MARK: - x86_128
 public extension MurmurHash3 {
 
+	/// Generate hash(x86_128)
+	///
+	/// - Parameters:
+	///   - array: Source data for hashing.
+	///   - seed: Seed for generate hash. Default is 0.
+	/// - Returns: An array of generated hash.
 	static public func x86_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt32] {
 
 		let c1: UInt32 = 0x239b961b
@@ -335,11 +349,13 @@ public extension MurmurHash3 {
 
 		return [h1, h2, h3, h4]
 	}
-
+	
+	/// Overload func for "x86_128(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x86_128(_ string: String, seed: UInt32 = 0) -> [UInt32] {
 		return x86_128(Array(string.utf8), seed: seed)
 	}
 	
+	/// Overload func for "x86_128(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x86_128(_ data: Data, seed: UInt32 = 0) -> [UInt32] {
 		return x86_128([UInt8](data), seed: seed)
 	}
@@ -348,9 +364,15 @@ public extension MurmurHash3 {
 
 
 
-// MARK: - x64 128bit
+// MARK: - x64_128
 public extension MurmurHash3 {
 	
+	/// Generate hash(x64_128)
+	///
+	/// - Parameters:
+	///   - array: Source data for hashing.
+	///   - seed: Seed for generate hash. Default is 0.
+	/// - Returns: An array of generated hash.
 	static public func x64_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt64] {
 
 		let c1: UInt64 = 0x87c37b91114253d5
@@ -486,11 +508,13 @@ public extension MurmurHash3 {
 
 		return [h1, h2]
 	}
-
+	
+	/// Overload func for "x64_128(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x64_128(_ string: String, seed: UInt32 = 0) -> [UInt64] {
 		return x64_128(Array(string.utf8), seed: seed)
 	}
-
+	
+	/// Overload func for "x64_128(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x64_128(_ data: Data, seed: UInt32 = 0) -> [UInt64] {
 		return x64_128([UInt8](data), seed: seed)
 	}
