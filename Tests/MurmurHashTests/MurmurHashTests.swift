@@ -53,37 +53,37 @@ class MurmurHashTests: XCTestCase {
 		
 		
 		// x86_128
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h1, MurmurHash3.x86_128(Array("Hello World!".utf8)).h1)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h2, MurmurHash3.x86_128(Array("Hello World!".utf8)).h2)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h3, MurmurHash3.x86_128(Array("Hello World!".utf8)).h3)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h4, MurmurHash3.x86_128(Array("Hello World!".utf8)).h4)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h1, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!).h1)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h2, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!).h2)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h3, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!).h3)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!").h4, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!).h4)
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[0], MurmurHash3.x86_128(Array("Hello World!".utf8))[0])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[1], MurmurHash3.x86_128(Array("Hello World!".utf8))[1])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[2], MurmurHash3.x86_128(Array("Hello World!".utf8))[2])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[3], MurmurHash3.x86_128(Array("Hello World!".utf8))[3])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[0], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!)[0])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[1], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!)[1])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[2], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!)[2])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!")[3], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!)[3])
 
 		// x86_32 with seed
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h1, MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff).h1)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h2, MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff).h2)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h3, MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff).h3)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h4, MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff).h4)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h1, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h1)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h2, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h2)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h3, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h3)
-		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff).h4, MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h4)
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[0], MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff)[0])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[1], MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff)[1])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[2], MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff)[2])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[3], MurmurHash3.x86_128(Array("Hello World!".utf8), seed: 0x7fffffff)[3])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[0], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[0])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[1], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[1])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[2], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[2])
+		XCTAssertEqual(MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)[3], MurmurHash3.x86_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[3])
 		
 		
 		// x64_128
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!").h1, MurmurHash3.x64_128(Array("Hello World!".utf8)).h1)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!").h2, MurmurHash3.x64_128(Array("Hello World!".utf8)).h2)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!").h1, MurmurHash3.x64_128("Hello World!".data(using: .utf8)!).h1)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!").h2, MurmurHash3.x64_128("Hello World!".data(using: .utf8)!).h2)
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!")[0], MurmurHash3.x64_128(Array("Hello World!".utf8))[0])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!")[1], MurmurHash3.x64_128(Array("Hello World!".utf8))[1])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!")[0], MurmurHash3.x64_128("Hello World!".data(using: .utf8)!)[0])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!")[1], MurmurHash3.x64_128("Hello World!".data(using: .utf8)!)[1])
 
 		// x64_128 with seed
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff).h1, MurmurHash3.x64_128(Array("Hello World!".utf8), seed: 0x7fffffff).h1)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff).h2, MurmurHash3.x64_128(Array("Hello World!".utf8), seed: 0x7fffffff).h2)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff).h1, MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h1)
-		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff).h2, MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff).h2)
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)[0], MurmurHash3.x64_128(Array("Hello World!".utf8), seed: 0x7fffffff)[0])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)[1], MurmurHash3.x64_128(Array("Hello World!".utf8), seed: 0x7fffffff)[1])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)[0], MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[0])
+		XCTAssertEqual(MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)[1], MurmurHash3.x64_128("Hello World!".data(using: .utf8)!, seed: 0x7fffffff)[1])
 	}
 	
 	
@@ -261,8 +261,8 @@ class MurmurHashTests: XCTestCase {
 	
 	// MARK: - x86_128
 	func test_x86_128() {
-		func toString(_ h: (h1: UInt32, h2: UInt32, h3: UInt32, h4: UInt32)) -> String {
-			return String.init(format: "0x%02x%02x%02x%02x", h.h1, h.h2, h.h3, h.h4)
+		func toString(_ h: [UInt32]) -> String {
+			return String.init(format: "0x%02x%02x%02x%02x", h[0], h[1], h[2], h[3])
 		}
 		
 		XCTAssertEqual(toString(MurmurHash3.x86_128("")), "0x00000000")
@@ -343,8 +343,8 @@ class MurmurHashTests: XCTestCase {
 	}
 	
 	func test_x86_128_seed() {
-		func toString(_ h: (h1: UInt32, h2: UInt32, h3: UInt32, h4: UInt32)) -> String {
-			return String.init(format: "0x%02x%02x%02x%02x", h.h1, h.h2, h.h3, h.h4)
+		func toString(_ h: [UInt32]) -> String {
+			return String.init(format: "0x%02x%02x%02x%02x", h[0], h[1], h[2], h[3])
 		}
 		
 		XCTAssertEqual(toString(MurmurHash3.x86_128("", seed: 0x7fffffff)), "0xc129af263e0227f33e0227f33e0227f3")
@@ -432,19 +432,21 @@ class MurmurHashTests: XCTestCase {
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
 
-		var out = (h1: UInt32(0), h2: UInt32(0), h3: UInt32(0), h4: UInt32(0))
+		do {
+			let out = MurmurHash3.x86_128(data)
+			XCTAssertEqual(out[0], 0xf3d97392)
+			XCTAssertEqual(out[1], 0x44076bea)
+			XCTAssertEqual(out[2], 0xaaa983c7)
+			XCTAssertEqual(out[3], 0xcc4c7251)
+		}
 
-		out = MurmurHash3.x86_128(data)
-		XCTAssertEqual(out.h1, 0xf3d97392)
-		XCTAssertEqual(out.h2, 0x44076bea)
-		XCTAssertEqual(out.h3, 0xaaa983c7)
-		XCTAssertEqual(out.h4, 0xcc4c7251)
-
-		out = MurmurHash3.x86_128(data, seed: 0x7fffffff)
-		XCTAssertEqual(out.h1, 0x66529317)
-		XCTAssertEqual(out.h2, 0x3c66d76c)
-		XCTAssertEqual(out.h3, 0xed7111d2)
-		XCTAssertEqual(out.h4, 0xec5190a3)
+		do {
+			let out = MurmurHash3.x86_128(data, seed: 0x7fffffff)
+			XCTAssertEqual(out[0], 0x66529317)
+			XCTAssertEqual(out[1], 0x3c66d76c)
+			XCTAssertEqual(out[2], 0xed7111d2)
+			XCTAssertEqual(out[3], 0xec5190a3)
+		}
 		#endif
 	}
 	
@@ -452,8 +454,8 @@ class MurmurHashTests: XCTestCase {
 	
 	// MARK: - x64_128
 	func test_x64_128() {
-		func toString(_ h: (h1: UInt64, h2: UInt64)) -> String {
-			return String.init(format: "0x%02lx%02lx", h.h1, h.h2)
+		func toString(_ h: [UInt64]) -> String {
+			return String.init(format: "0x%02lx%02lx", h[0], h[1])
 		}
 		
 		XCTAssertEqual(toString(MurmurHash3.x64_128("")), "0x0000")
@@ -534,8 +536,8 @@ class MurmurHashTests: XCTestCase {
 	}
 	
 	func test_x64_128_seed() {
-		func toString(_ h: (h1: UInt64, h2: UInt64)) -> String {
-			return String.init(format: "0x%02lx%02lx", h.h1, h.h2)
+		func toString(_ h: [UInt64]) -> String {
+			return String.init(format: "0x%02lx%02lx", h[0], h[1])
 		}
 		
 		XCTAssertEqual(toString(MurmurHash3.x64_128("", seed: 0x7fffffff)), "0x656ac7570e166c3fc34c2ca1ed468e40")
@@ -623,15 +625,17 @@ class MurmurHashTests: XCTestCase {
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
 		
-		var out = (h1: UInt64(0), h2: UInt64(0))
+		do {
+			let out = MurmurHash3.x64_128(data)
+			XCTAssertEqual(out[0], 0xef12617f3e2a5f9a)
+			XCTAssertEqual(out[1], 0x44b3598f2e09cd50)
+		}
 		
-		out = MurmurHash3.x64_128(data)
-		XCTAssertEqual(out.h1, 0xef12617f3e2a5f9a)
-		XCTAssertEqual(out.h2, 0x44b3598f2e09cd50)
-		
-		out = MurmurHash3.x64_128(data, seed: 0x7fffffff)
-		XCTAssertEqual(out.h1, 0xc9e3c738ae105764)
-		XCTAssertEqual(out.h2, 0xb1d34bb24aa326c4)
+		do {
+			let out = MurmurHash3.x64_128(data, seed: 0x7fffffff)
+			XCTAssertEqual(out[0], 0xc9e3c738ae105764)
+			XCTAssertEqual(out[1], 0xb1d34bb24aa326c4)
+		}
 		#endif
 	}
 
