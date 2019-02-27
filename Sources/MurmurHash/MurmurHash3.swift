@@ -76,12 +76,12 @@ public class MurmurHash3 {
 // MARK: - x86_32
 public extension MurmurHash3 {
 
-	/// Generate hash(x86_32)
+	/// Generate digest(x86_32)
 	///
 	/// - Parameters:
-	///   - array: Source data for hashing.
-	///   - seed: Seed for generate hash. Default is 0.
-	/// - Returns: A generated hash.
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: A generated digest.
 	static public func x86_32(_ array: [UInt8], seed: UInt32 = 0) -> UInt32 {
 	
 		let c1: UInt32 = 0xcc9e2d51
@@ -160,12 +160,12 @@ public extension MurmurHash3 {
 // MARK: - x86_128
 public extension MurmurHash3 {
 
-	/// Generate hash(x86_128)
+	/// Generate digest(x86_128)
 	///
 	/// - Parameters:
-	///   - array: Source data for hashing.
-	///   - seed: Seed for generate hash. Default is 0.
-	/// - Returns: An array of generated hash.
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: An array of generated digest.
 	static public func x86_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt32] {
 
 		let c1: UInt32 = 0x239b961b
@@ -367,12 +367,12 @@ public extension MurmurHash3 {
 // MARK: - x64_128
 public extension MurmurHash3 {
 	
-	/// Generate hash(x64_128)
+	/// Generate digest(x64_128)
 	///
 	/// - Parameters:
-	///   - array: Source data for hashing.
-	///   - seed: Seed for generate hash. Default is 0.
-	/// - Returns: An array of generated hash.
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: An array of generated digest.
 	static public func x64_128(_ array: [UInt8], seed: UInt32 = 0) -> [UInt64] {
 
 		let c1: UInt64 = 0x87c37b91114253d5
