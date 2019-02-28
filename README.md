@@ -71,13 +71,24 @@ import MurmurHash_Swift
 let digest_x86_32 = MurmurHash3.x86_32("Hello World!") // if using seed, e.g. "MurmurHash3.x86_32("Hello World!", seed: 0x7fffffff)"
 // digest_x86_32 -> 0xdc09357d
 
+let digest_x86_32_hex = MurmurHash3.x86_32Hex("Hello World!")
+// digest_x86_32_hex -> "dc09357d"
+
+
 let digest_x86_128 = MurmurHash3.x86_128("Hello World!") // if using seed, e.g. "MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)"
 // digest_x86_128[0] -> 0x6bee9883
 // digest_x86_128[1] -> 0xeb1be4f5
 // digest_x86_128[2] -> 0x9dfb7172
 // digest_x86_128[3] -> 0xae3fbea9
 
+let digest_x86_128_hex = MurmurHash3.x86_128Hex("Hello World!")
+// digest_x86_128_hex -> "6bee9883eb1be4f59dfb7172ae3fbea9"
+
+
 let digest_x64_128 = MurmurHash3.x64_128("Hello World!") // if using seed, e.g. "MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)"
 // digest_x64_128[0] -> 0x80025454af3196b2
 // digest_x64_128[1] -> 0xe57813856f452fa6
+
+let digest_x64_128_hex = MurmurHash3.x64_128Hex("Hello World!")
+// digest_x64_128_hex -> "80025454af3196b2e57813856f452fa6"
 ```
