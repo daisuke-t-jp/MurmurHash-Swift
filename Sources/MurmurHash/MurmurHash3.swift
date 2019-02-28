@@ -68,7 +68,22 @@ public class MurmurHash3 {
 
 		return block
 	}
+	
+	static private func UInt32ArrayToHex(_ array: [UInt32]) -> String {
+		var hex = ""
+		for val in array {
+			hex += String.init(format: "%08x", val)
+		}
+		return hex
+	}
 
+	static private func UInt64ArrayToHex(_ array: [UInt64]) -> String {
+		var hex = ""
+		for val in array {
+			hex += String.init(format: "%016lx", val)
+		}
+		return hex
+	}
 }
 	
 
@@ -151,6 +166,30 @@ public extension MurmurHash3 {
 	/// Overload func for "x86_32(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x86_32(_ data: Data, seed: UInt32 = 0) -> UInt32 {
 		return x86_32([UInt8](data), seed: seed)
+	}
+	
+	
+	/// Generate digest's hex string(x86_32)
+	///
+	/// - Parameters:
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: A generated digest's hex string.
+	static public func x86_32Hex(_ array: [UInt8], seed: UInt32 = 0) -> String {
+		let digest = x86_32(array, seed: seed)
+		return UInt32ArrayToHex([digest])
+	}
+
+	/// Overload func for "x86_32Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x86_32Hex(_ string: String, seed: UInt32 = 0) -> String {
+		let digest = x86_32(string, seed: seed)
+		return UInt32ArrayToHex([digest])
+	}
+	
+	/// Overload func for "x86_32Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x86_32Hex(_ data: Data, seed: UInt32 = 0) -> String {
+		let digest = x86_32(data, seed: seed)
+		return UInt32ArrayToHex([digest])
 	}
 
 }
@@ -360,6 +399,30 @@ public extension MurmurHash3 {
 		return x86_128([UInt8](data), seed: seed)
 	}
 	
+	
+	/// Generate digest's hex string(x86_128)
+	///
+	/// - Parameters:
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: A generated digest's hex string.
+	static public func x86_128Hex(_ array: [UInt8], seed: UInt32 = 0) -> String {
+		let digest = x86_128(array, seed: seed)
+		return UInt32ArrayToHex(digest)
+	}
+	
+	/// Overload func for "x86_128Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x86_128Hex(_ string: String, seed: UInt32 = 0) -> String {
+		let digest = x86_128(string, seed: seed)
+		return UInt32ArrayToHex(digest)
+	}
+	
+	/// Overload func for "x86_128Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x86_128Hex(_ data: Data, seed: UInt32 = 0) -> String {
+		let digest = x86_128(data, seed: seed)
+		return UInt32ArrayToHex(digest)
+	}
+	
 }
 
 
@@ -517,6 +580,30 @@ public extension MurmurHash3 {
 	/// Overload func for "x64_128(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func x64_128(_ data: Data, seed: UInt32 = 0) -> [UInt64] {
 		return x64_128([UInt8](data), seed: seed)
+	}
+	
+	
+	/// Generate digest's hex string(x64_128)
+	///
+	/// - Parameters:
+	///   - array: A source data for hash.
+	///   - seed: A seed for generate digest. Default is 0.
+	/// - Returns: A generated digest's hex string.
+	static public func x64_128Hex(_ array: [UInt8], seed: UInt32 = 0) -> String {
+		let digest = x64_128(array, seed: seed)
+		return UInt64ArrayToHex(digest)
+	}
+	
+	/// Overload func for "x86_128Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x64_128Hex(_ string: String, seed: UInt32 = 0) -> String {
+		let digest = x64_128(string, seed: seed)
+		return UInt64ArrayToHex(digest)
+	}
+	
+	/// Overload func for "x64_128Hex(_ array: [UInt8], seed: UInt32 = 0)".
+	static public func x64_128Hex(_ data: Data, seed: UInt32 = 0) -> String {
+		let digest = x64_128(data, seed: seed)
+		return UInt64ArrayToHex(digest)
 	}
 
 }
