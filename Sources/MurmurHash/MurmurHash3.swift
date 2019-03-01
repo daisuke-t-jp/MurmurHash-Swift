@@ -39,33 +39,14 @@ public class MurmurHash3 {
 		return k2
 	}
 	
-	static private func block32(_ array: [UInt8], index: Int) -> UInt32 {
-		
-		var block = UInt32(0)
-
-		// NOTE: Supported only little endian.
-		block |= UInt32(array[index * 4 + 0]) << 0
-		block |= UInt32(array[index * 4 + 1]) << 8
-		block |= UInt32(array[index * 4 + 2]) << 16
-		block |= UInt32(array[index * 4 + 3]) << 24
-		
-		return block
-	}
-	
-	static private func block64(_ array: [UInt8], index: Int) -> UInt64 {
-		
-		var block = UInt64(0)
+	static private func block<T: FixedWidthInteger>(_ array: [UInt8], index: Int) -> T {
+		var block: T = 0
 		
 		// NOTE: Supported only little endian.
-		block |= UInt64(array[index * 8 + 0]) << 0
-		block |= UInt64(array[index * 8 + 1]) << 8
-		block |= UInt64(array[index * 8 + 2]) << 16
-		block |= UInt64(array[index * 8 + 3]) << 24
-		block |= UInt64(array[index * 8 + 4]) << 32
-		block |= UInt64(array[index * 8 + 5]) << 40
-		block |= UInt64(array[index * 8 + 6]) << 48
-		block |= UInt64(array[index * 8 + 7]) << 56
-
+		for i in 0..<MemoryLayout<T>.size {
+			block |= T(array[index * MemoryLayout<T>.size + i]) << (i * 8)
+		}
+		
 		return block
 	}
 	
@@ -110,7 +91,7 @@ public extension MurmurHash3 {
 		 * body
 		 */
 		for i in 0..<nblocks {
-			var k1 = block32(array, index: i)
+			var k1: UInt32 = block(array, index: i)
 
 			k1 &*= c1
 			k1 = rotl(k1, r: 15)
@@ -224,10 +205,10 @@ public extension MurmurHash3 {
 		 */
 		for i in 0..<nblocks {
 			
-			var k1 = block32(array, index: i * 4)
-			var k2 = block32(array, index: i * 4 + 1)
-			var k3 = block32(array, index: i * 4 + 2)
-			var k4 = block32(array, index: i * 4 + 3)
+			var k1: UInt32 = block(array, index: i * 4)
+			var k2: UInt32 = block(array, index: i * 4 + 1)
+			var k3: UInt32 = block(array, index: i * 4 + 2)
+			var k4: UInt32 = block(array, index: i * 4 + 3)
 
 			k1 &*= c1
 			k1 = rotl(k1, r: 15)
@@ -270,11 +251,11 @@ public extension MurmurHash3 {
 		/**
 		 * tail
 		 */
-		var k1 = UInt32(0)
-		var k2 = UInt32(0)
-		var k3 = UInt32(0)
-		var k4 = UInt32(0)
-
+		var k1: UInt32 = 0
+		var k2: UInt32 = 0
+		var k3: UInt32 = 0
+		var k4: UInt32 = 0
+		
 		switch array.count & 15 {
 		case 15:
 			k4 ^= UInt32(array[nblocks * 16 + 14]) << 16
@@ -451,9 +432,9 @@ public extension MurmurHash3 {
 		 */
 		for i in 0..<nblocks {
 
-			var k1 = block64(array, index: i * 2 + 0)
-			var k2 = block64(array, index: i * 2 + 1)
-
+			var k1: UInt64 = block(array, index: i * 2 + 0)
+			var k2: UInt64 = block(array, index: i * 2 + 1)
+			
 			k1 &*= c1
 			k1 = rotl(k1, r: 31)
 			k1 &*= c2
@@ -477,9 +458,9 @@ public extension MurmurHash3 {
 		/**
 		 * tail
 		 */
-		var k1 = UInt64(0)
-		var k2 = UInt64(0)
-		
+		var k1: UInt64 = 0
+		var k2: UInt64 = 0
+
 		switch array.count & 15 {
 		case 15:
 			k2 ^= UInt64(array[nblocks * 16 + 14]) << 48
