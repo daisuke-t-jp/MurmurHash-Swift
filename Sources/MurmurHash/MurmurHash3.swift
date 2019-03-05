@@ -8,6 +8,6 @@
 
 import Foundation
 
-public class MurmurHash3 {
+public struct MurmurHash3 {
 	
 }

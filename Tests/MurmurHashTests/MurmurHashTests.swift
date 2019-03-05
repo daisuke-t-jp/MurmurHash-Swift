@@ -24,90 +24,530 @@ class MurmurHashTests: XCTestCase {
     }
 
 	
-	func test86_32() {
-		do {
-			XCTAssertEqual(MurmurHash3.x86_32.digest(""), 0)
-
-			let x86_32 = MurmurHash3.x86_32()
-			XCTAssertEqual(MurmurHash3.x86_32.digest(""), x86_32.digest())
-		}
+	// MARK: - Overload
+	func test_x86_32Overload() {
+		XCTAssertEqual(MurmurHash3.x86_32.digest("Hello World!"), MurmurHash3.x86_32.digest(Array("Hello World!".utf8)))
+		XCTAssertEqual(MurmurHash3.x86_32.digest("Hello World!"), MurmurHash3.x86_32.digest("Hello World!".data(using: .utf8)!))
+	}
+	
+	func test_x86_128Overload() {
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World!"), MurmurHash3.x86_128.digest(Array("Hello World!".utf8)))
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World!"), MurmurHash3.x86_128.digest("Hello World!".data(using: .utf8)!))
+	}
+	
+	func test_x64_128Overload() {
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World!"), MurmurHash3.x64_128.digest(Array("Hello World!".utf8)))
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World!"), MurmurHash3.x64_128.digest("Hello World!".data(using: .utf8)!))
+	}
+	
+	
+	// MARK: - OneShot
+	func test_x86_32OneShot() {
+		XCTAssertEqual(MurmurHash3.x86_32.digest(""), 0x00000000)
+		XCTAssertEqual(MurmurHash3.x86_32.digestHex(""), "00000000")
 		
-		do {
-			XCTAssertEqual(MurmurHash3.x86_32.digest(" "), 2129959832)
-
-			let x86_32 = MurmurHash3.x86_32()
-			x86_32.update(" ")
-			XCTAssertEqual(MurmurHash3.x86_32.digest(" "), x86_32.digest())
-		}
+		XCTAssertEqual(MurmurHash3.x86_32.digest("Hello World! Hello World!"), 0x0be480fc)
+		XCTAssertEqual(MurmurHash3.x86_32.digestHex("Hello World! Hello World!").lowercased(), "0be480fc")
+	}
+	
+	func test_x86_32OneShotWithSeed() {
+		XCTAssertEqual(MurmurHash3.x86_32.digest("", seed: 0x7fffffff), 0xf9cc0ea8)
+		XCTAssertEqual(MurmurHash3.x86_32.digestHex("", seed: 0x7fffffff), "f9cc0ea8")
 		
-		do {
-			XCTAssertEqual(MurmurHash3.x86_32.digest("abcdefghijklmnopqrstuvwxyz"), 2739798893)
-			
-			let x86_32 = MurmurHash3.x86_32()
-			x86_32.update("abc")
-			x86_32.update("d")
-			x86_32.update("efgh")
-			x86_32.update("ijklm")
-			x86_32.update("nopqrstuvwxyz")
-			XCTAssertEqual(MurmurHash3.x86_32.digest("abcdefghijklmnopqrstuvwxyz"), x86_32.digest())
-		}
+		XCTAssertEqual(MurmurHash3.x86_32.digest("Hello World! Hello World!", seed: 0x7fffffff), 0x47fcc800)
+		XCTAssertEqual(MurmurHash3.x86_32.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "47fcc800")
 	}
 
-	func test86_128() {
+	func test_x86_128OneShot() {
+		XCTAssertEqual(MurmurHash3.x86_128.digest("")[0], 0x00000000)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("")[1], 0x00000000)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("")[2], 0x00000000)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("")[3], 0x00000000)
+		XCTAssertEqual(MurmurHash3.x86_128.digestHex(""), "00000000000000000000000000000000")
+		
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!")[0], 0x86163d2b)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!")[1], 0x245b8ee2)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!")[2], 0x3c4d0560)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!")[3], 0x24166d77)
+		XCTAssertEqual(MurmurHash3.x86_128.digestHex("Hello World! Hello World!").lowercased(), "86163d2b245b8ee23c4d056024166d77")
+	}
+	
+	func test_x86_128OneShotWithSeed() {
+		XCTAssertEqual(MurmurHash3.x86_128.digest("", seed: 0x7fffffff)[0], 0xc129af26)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("", seed: 0x7fffffff)[1], 0x3e0227f3)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("", seed: 0x7fffffff)[2], 0x3e0227f3)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("", seed: 0x7fffffff)[3], 0x3e0227f3)
+		XCTAssertEqual(MurmurHash3.x86_128.digestHex("", seed: 0x7fffffff), "c129af263e0227f33e0227f33e0227f3")
+		
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[0], 0xd1ab28e6)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[1], 0xf4fc514c)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[2], 0x5e0df753)
+		XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[3], 0xb015261f)
+		XCTAssertEqual(MurmurHash3.x86_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "d1ab28e6f4fc514c5e0df753b015261f")
+	}
+
+	func test_x64_128OneShot() {
+		XCTAssertEqual(MurmurHash3.x64_128.digest("")[0], 0x0000000000000000)
+		XCTAssertEqual(MurmurHash3.x64_128.digest("")[1], 0x0000000000000000)
+		XCTAssertEqual(MurmurHash3.x64_128.digestHex(""), "00000000000000000000000000000000")
+		
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!")[0], 0xe881a28e49269b1e)
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!")[1], 0x8d0d724eecb72e66)
+		XCTAssertEqual(MurmurHash3.x64_128.digestHex("Hello World! Hello World!").lowercased(), "e881a28e49269b1e8d0d724eecb72e66")
+	}
+
+	func test_x64_128OneShotWithSeed() {
+		XCTAssertEqual(MurmurHash3.x64_128.digest("", seed: 0x7fffffff)[0], 0x656ac7570e166c3f)
+		XCTAssertEqual(MurmurHash3.x64_128.digest("", seed: 0x7fffffff)[1], 0xc34c2ca1ed468e40)
+		XCTAssertEqual(MurmurHash3.x64_128.digestHex("", seed: 0x7fffffff), "656ac7570e166c3fc34c2ca1ed468e40")
+		
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[0], 0x6028586a8c3df476)
+		XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[1], 0xfbd535aec6551aab)
+		XCTAssertEqual(MurmurHash3.x64_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "6028586a8c3df476fbd535aec6551aab")
+	}
+
+	
+	
+	// MARK: - Update
+	func test_x86_32Update() {
 		do {
-			XCTAssertEqual(MurmurHash3.x86_128.digestHex(""), "00000000000000000000000000000000")
-			
-			let x86_128 = MurmurHash3.x86_128()
-			XCTAssertEqual(MurmurHash3.x86_128.digest(""), x86_128.digest())
+			let mmh = MurmurHash3.x86_32()
+			XCTAssertEqual(mmh.digest(), 0x00000000)
+			XCTAssertEqual(mmh.digestHex(), "00000000")
 		}
 		
 		do {
-			XCTAssertEqual(MurmurHash3.x86_128.digestHex(" ").lowercased(), "b6db78e7959b24eb959b24eb959b24eb")
-			
-			let x86_128 = MurmurHash3.x86_128()
-			x86_128.update(" ")
-			XCTAssertEqual(MurmurHash3.x86_128.digest(" "), x86_128.digest())
-		}
-		
-		do {
-			XCTAssertEqual(MurmurHash3.x86_128.digestHex("abcdefghijklmnopqrstuvwxyz").lowercased(), "3e340613666f2f6617f6566e44e33d2c")
-			
-			let x86_128 = MurmurHash3.x86_128()
-			x86_128.update("abc")
-			x86_128.update("d")
-			x86_128.update("efgh")
-			x86_128.update("ijklm")
-			x86_128.update("nopqrstuvwxyz")
-			XCTAssertEqual(MurmurHash3.x86_128.digest("abcdefghijklmnopqrstuvwxyz"), x86_128.digest())
+			let mmh = MurmurHash3.x86_32()
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest(), 0x0be480fc)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "0be480fc")
 		}
 	}
 	
-	func test64_128() {
+	func test_x86_32UpdateWithSeed() {
 		do {
-			XCTAssertEqual(MurmurHash3.x64_128.digestHex(""), "00000000000000000000000000000000")
-			
-			let x64_128 = MurmurHash3.x64_128()
-			XCTAssertEqual(MurmurHash3.x64_128.digest(""), x64_128.digest())
+			let mmh = MurmurHash3.x86_32(0x7fffffff)
+			XCTAssertEqual(mmh.digest(), 0xf9cc0ea8)
+			XCTAssertEqual(mmh.digestHex(), "f9cc0ea8")
 		}
 		
 		do {
-			XCTAssertEqual(MurmurHash3.x64_128.digestHex(" ").lowercased(), "18f081109e84f7393fd44c9b7c437cb8")
-			
-			let x64_128 = MurmurHash3.x64_128()
-			x64_128.update(" ")
-			XCTAssertEqual(MurmurHash3.x64_128.digest(" "), x64_128.digest())
+			let mmh = MurmurHash3.x86_32(0x7fffffff)
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest(), 0x47fcc800)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "47fcc800")
+		}
+	}
+	
+	func test_x86_128Update() {
+		do {
+			let mmh = MurmurHash3.x86_128()
+			XCTAssertEqual(mmh.digest()[0], 0x00000000)
+			XCTAssertEqual(mmh.digest()[1], 0x00000000)
+			XCTAssertEqual(mmh.digest()[2], 0x00000000)
+			XCTAssertEqual(mmh.digest()[3], 0x00000000)
+			XCTAssertEqual(mmh.digestHex(), "00000000000000000000000000000000")
 		}
 		
 		do {
-			XCTAssertEqual(MurmurHash3.x64_128.digestHex("abcdefghijklmnopqrstuvwxyz").lowercased(), "749c9d7e516f4aa9e9ad9c89b6a7d529")
-			
-			let x64_128 = MurmurHash3.x64_128()
-			x64_128.update("abc")
-			x64_128.update("d")
-			x64_128.update("efgh")
-			x64_128.update("ijklm")
-			x64_128.update("nopqrstuvwxyz")
-			XCTAssertEqual(MurmurHash3.x64_128.digest("abcdefghijklmnopqrstuvwxyz"), x64_128.digest())
+			let mmh = MurmurHash3.x86_128()
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest()[0], 0x86163d2b)
+			XCTAssertEqual(mmh.digest()[1], 0x245b8ee2)
+			XCTAssertEqual(mmh.digest()[2], 0x3c4d0560)
+			XCTAssertEqual(mmh.digest()[3], 0x24166d77)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "86163d2b245b8ee23c4d056024166d77")
 		}
+	}
+	
+	func test_x86_128UpdateWithSeed() {
+		do {
+			let mmh = MurmurHash3.x86_128(0x7fffffff)
+			XCTAssertEqual(mmh.digest()[0], 0xc129af26)
+			XCTAssertEqual(mmh.digest()[1], 0x3e0227f3)
+			XCTAssertEqual(mmh.digest()[2], 0x3e0227f3)
+			XCTAssertEqual(mmh.digest()[3], 0x3e0227f3)
+			XCTAssertEqual(mmh.digestHex(), "c129af263e0227f33e0227f33e0227f3")
+		}
+		
+		do {
+			let mmh = MurmurHash3.x86_128(0x7fffffff)
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest()[0], 0xd1ab28e6)
+			XCTAssertEqual(mmh.digest()[1], 0xf4fc514c)
+			XCTAssertEqual(mmh.digest()[2], 0x5e0df753)
+			XCTAssertEqual(mmh.digest()[3], 0xb015261f)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "d1ab28e6f4fc514c5e0df753b015261f")
+		}
+	}
+	
+	func test_x64_128Update() {
+		do {
+			let mmh = MurmurHash3.x64_128()
+			XCTAssertEqual(mmh.digest()[0], 0x0000000000000000)
+			XCTAssertEqual(mmh.digest()[1], 0x0000000000000000)
+			XCTAssertEqual(mmh.digestHex(), "00000000000000000000000000000000")
+		}
+		
+		do {
+			let mmh = MurmurHash3.x64_128()
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest()[0], 0xe881a28e49269b1e)
+			XCTAssertEqual(mmh.digest()[1], 0x8d0d724eecb72e66)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "e881a28e49269b1e8d0d724eecb72e66")
+		}
+	}
+	
+	func test_x64_128UpdateWithSeed() {
+		do {
+			let mmh = MurmurHash3.x64_128(0x7fffffff)
+			XCTAssertEqual(mmh.digest()[0], 0x656ac7570e166c3f)
+			XCTAssertEqual(mmh.digest()[1], 0xc34c2ca1ed468e40)
+			XCTAssertEqual(mmh.digestHex(), "656ac7570e166c3fc34c2ca1ed468e40")
+		}
+		
+		do {
+			let mmh = MurmurHash3.x64_128(0x7fffffff)
+			mmh.update("H")
+			mmh.update("el")
+			mmh.update("lo W")
+			mmh.update("orld! He")
+			mmh.update("llo World!")
+			XCTAssertEqual(mmh.digest()[0], 0x6028586a8c3df476)
+			XCTAssertEqual(mmh.digest()[1], 0xfbd535aec6551aab)
+			XCTAssertEqual(mmh.digestHex().lowercased(), "6028586a8c3df476fbd535aec6551aab")
+		}
+	}
+	
+	
+	
+	// MARK: - Reset
+	func test_x86_32Reset() {
+		let seed = UInt32(0x7fffffff)
+		let mmh = MurmurHash3.x86_32()
+		
+		mmh.update("123456789ABCDEF")
+		mmh.reset()
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x86_32().digest())
+		
+		mmh.update("123456789ABCDEF")
+		mmh.seed = seed	// Reset when setting seed.
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x86_32(seed).digest())
+	}
+
+	func test_x86_128Reset() {
+		let seed = UInt32(0x7fffffff)
+		let mmh = MurmurHash3.x86_128()
+		
+		mmh.update("123456789ABCDEF")
+		mmh.reset()
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x86_128().digest())
+		
+		mmh.update("123456789ABCDEF")
+		mmh.seed = seed	// Reset when setting seed.
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x86_128(seed).digest())
+	}
+
+	func test_x64_128Reset() {
+		let seed = UInt32(0x7fffffff)
+		let mmh = MurmurHash3.x64_128()
+		
+		mmh.update("123456789ABCDEF")
+		mmh.reset()
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x64_128().digest())
+		
+		mmh.update("123456789ABCDEF")
+		mmh.seed = seed	// Reset when setting seed.
+		XCTAssertEqual(mmh.digest(), MurmurHash3.x64_128(seed).digest())
+	}
+	
+	
+	
+	// MARK: - Copy
+	func test_x86_32Copy() {
+		do {
+			let mmh = MurmurHash3.x86_32()
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+		
+		do {
+			let mmh = MurmurHash3.x86_32(0x7fffffff)
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+	}
+	
+	func test_x86_128Copy() {
+		do {
+			let mmh = MurmurHash3.x86_128()
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+		
+		do {
+			let mmh = MurmurHash3.x86_128(0x7fffffff)
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+	}
+	
+	func test_x64_128Copy() {
+		do {
+			let mmh = MurmurHash3.x64_128()
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+		
+		do {
+			let mmh = MurmurHash3.x64_128(0x7fffffff)
+			let mmh2 = mmh
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+			
+			mmh.update("123456789ABCDEF")
+			XCTAssertEqual(mmh.digest(), mmh2.digest())
+		}
+	}
+	
+	
+	
+	// MARK: - File
+	func test_x86_32File() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x86_32()
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digest(), 0xcae14481)
+		#endif
+	}
+	
+	func test_x86_32FileWithSeed() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x86_32(0x7fffffff)
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digest(), 0xf9eb2993)
+		#endif
+	}
+	
+	func test_x86_128File() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x86_128()
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digestHex().lowercased(), "f3d9739244076beaaaa983c7cc4c7251")
+		#endif
+	}
+	
+	func test_x86_128FileWithSeed() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x86_128(0x7fffffff)
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digestHex().lowercased(), "665293173c66d76ced7111d2ec5190a3")
+		#endif
+	}
+	
+	func test_x64_128File() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x64_128()
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digestHex().lowercased(), "ef12617f3e2a5f9a44b3598f2e09cd50")
+		#endif
+	}
+	
+	func test_x64_128FileWithSeed() {
+		#if SWIFT_PACKAGE
+		print("SwiftPM-Building skipped UnitTest that used resources.")
+		#else
+		let mmh = MurmurHash3.x64_128(0x7fffffff)
+		
+		let bundle = Bundle(for: type(of: self))
+		let path = bundle.path(forResource: "alice29", ofType: "txt")!
+		let data = NSData(contentsOfFile: path)! as Data
+		
+		let bufSize = 1024
+		var index = 0
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		XCTAssertEqual(mmh.digestHex().lowercased(), "c9e3c738ae105764b1d34bb24aa326c4")
+		#endif
 	}
 }
