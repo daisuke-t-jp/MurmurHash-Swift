@@ -1,5 +1,5 @@
 //
-//  x86_32.swift
+//  MurmurHash3_x86_32.swift
 //  MurmurHash
 //
 //  Created by Daisuke T on 2019/03/04.

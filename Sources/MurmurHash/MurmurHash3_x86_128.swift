@@ -1,5 +1,5 @@
 //
-//  x64_128.swift
+//  MurmurHash3_x86_128.swift
 //  MurmurHash
 //
 //  Created by Daisuke T on 2019/03/04.
@@ -9,13 +9,16 @@
 import Foundation
 
 extension MurmurHash3 {
-	
-	public class x64_128 {
-		
+
+	public class x86_128 {
+
 		// MARK: - Enum, Const
-		static private let c1: UInt64 = 0x87c37b91114253d5
-		static private let c2: UInt64 = 0x4cf5ad432745937f
-		
+		static private let c1: UInt32 = 0x239b961b
+		static private let c2: UInt32 = 0xab0e9789
+		static private let c3: UInt32 = 0x38b34ae5
+		static private let c4: UInt32 = 0xa1e38b93
+
+
 		// MARK: - Property
 		private let endian = Common.endian()
 		private var state = State()
@@ -24,10 +27,10 @@ extension MurmurHash3 {
 				reset()
 			}
 		}
-		
-		
+
+
 		// MARK: - Life cycle
-		
+
 		/// Creates a new instance with the seed.
 		///
 		/// - Parameter seed: A seed for generate digest. Default is 0.
@@ -35,167 +38,215 @@ extension MurmurHash3 {
 			self.seed = seed
 			reset()
 		}
-		
+
 	}
 }
 
 
 
 // MARK: - State
-extension MurmurHash3.x64_128 {
+extension MurmurHash3.x86_128 {
 	struct State {
 		var totalLen: Int = 0
 		var mem = [UInt8](repeating: 0, count: 15)
 		var memSize: Int = 0
 		var tail = MurmurHash3Tail(15)
-		var h = [UInt64](repeating: 0, count: 2)
+		var h = [UInt32](repeating: 0, count: 4)
 	}
 }
 
 
 
 // MARK: - Utility
-extension MurmurHash3.x64_128 {
-	
-	static private func body(_ h: [UInt64], array: [UInt8]) -> [UInt64] {
+extension MurmurHash3.x86_128 {
+
+	static private func body(_ h: [UInt32], array: [UInt8]) -> [UInt32] {
 		let nblocks = array.count / 16
-		var h1: UInt64 = h[0]
-		var h2: UInt64 = h[1]
-		
+		var h1: UInt32 = h[0]
+		var h2: UInt32 = h[1]
+		var h3: UInt32 = h[2]
+		var h4: UInt32 = h[3]
+
 		for i in 0..<nblocks {
 			
-			var k1: UInt64 = Common.UInt8ArrayToUInt(array, index: i * 2 + 0, endian: Common.endian())
-			var k2: UInt64 = Common.UInt8ArrayToUInt(array, index: i * 2 + 1, endian: Common.endian())
-
+			var k1: UInt32 = Common.UInt8ArrayToUInt(array, index: i * 4, endian: Common.endian())
+			var k2: UInt32 = Common.UInt8ArrayToUInt(array, index: i * 4 + 1, endian: Common.endian())
+			var k3: UInt32 = Common.UInt8ArrayToUInt(array, index: i * 4 + 2, endian: Common.endian())
+			var k4: UInt32 = Common.UInt8ArrayToUInt(array, index: i * 4 + 3, endian: Common.endian())
+			
 			k1 &*= c1
-			k1 = Common.rotl(k1, r: 31)
+			k1 = Common.rotl(k1, r: 15)
 			k1 &*= c2
 			h1 ^= k1
 			
-			h1 = Common.rotl(h1, r: 27)
+			h1 = Common.rotl(h1, r: 19)
 			h1 &+= h2
-			h1 = h1 &* 5 &+ 0x52dce729
+			h1 = h1 &* 5 &+ 0x561ccd1b
 			
 			k2 &*= c2
-			k2 = Common.rotl(k2, r: 33)
-			k2 &*= c1
+			k2 = Common.rotl(k2, r: 16)
+			k2 &*= c3
 			h2 ^= k2
 			
-			h2 = Common.rotl(h2, r: 31)
-			h2 &+= h1
-			h2 = h2 &* 5 &+ 0x38495ab5
+			h2 = Common.rotl(h2, r: 17)
+			h2 &+= h3
+			h2 = h2 &* 5 &+ 0x0bcaa747
+			
+			k3 &*= c3
+			k3 = Common.rotl(k3, r: 17)
+			k3 &*= c4
+			h3 ^= k3
+			
+			h3 = Common.rotl(h3, r: 15)
+			h3 &+= h4
+			h3 = h3 &* 5 &+ 0x96cd1c35
+			
+			k4 &*= c4
+			k4 = Common.rotl(k4, r: 18)
+			k4 &*= c1
+			h4 ^= k4
+			
+			h4 = Common.rotl(h4, r: 13)
+			h4 &+= h1
+			h4 = h4 &* 5 &+ 0x32ac3b17
 		}
 		
-		return [h1, h2]
+		return [h1, h2, h3, h4]
 	}
-	
-	static private func tailAndFinalize(_ h: [UInt64], tail: [UInt8], len: Int) -> [UInt64] {
-		var k1: UInt64 = 0
-		var k2: UInt64 = 0
-		var h1: UInt64 = h[0]
-		var h2: UInt64 = h[1]
-		
+
+	static private func tailAndFinalize(_ h: [UInt32], tail: [UInt8], len: Int) -> [UInt32] {
+		var k1: UInt32 = 0
+		var k2: UInt32 = 0
+		var k3: UInt32 = 0
+		var k4: UInt32 = 0
+		var h1: UInt32 = h[0]
+		var h2: UInt32 = h[1]
+		var h3: UInt32 = h[2]
+		var h4: UInt32 = h[3]
+
 		/**
 		 * tail
 		 */
 		switch len & 15 {
 		case 15:
-			k2 ^= UInt64(tail[14]) << 48
+			k4 ^= UInt32(tail[14]) << 16
 			fallthrough
-			
+
 		case 14:
-			k2 ^= UInt64(tail[13]) << 40
+			k4 ^= UInt32(tail[13]) << 8
 			fallthrough
-			
+
 		case 13:
-			k2 ^= UInt64(tail[12]) << 32
+			k4 ^= UInt32(tail[12]) << 0
+			k4 &*= c4
+			k4 = Common.rotl(k4, r: 18)
+			k4 &*= c1
+			h4 ^= k4
 			fallthrough
-			
+
+
 		case 12:
-			k2 ^= UInt64(tail[11]) << 24
+			k3 ^= UInt32(tail[11]) << 24
 			fallthrough
-			
+
 		case 11:
-			k2 ^= UInt64(tail[10]) << 16
+			k3 ^= UInt32(tail[10]) << 16
 			fallthrough
-			
+
 		case 10:
-			k2 ^= UInt64(tail[9]) << 8
+			k3 ^= UInt32(tail[9]) << 8
 			fallthrough
-			
+
 		case 9:
-			k2 ^= UInt64(tail[8]) << 0
+			k3 ^= UInt32(tail[8]) << 0
+			k3 &*= c3
+			k3 = Common.rotl(k3, r: 17)
+			k3 &*= c4
+			h3 ^= k3
+			fallthrough
+
+
+		case 8:
+			k2 ^= UInt32(tail[7]) << 24
+			fallthrough
+
+		case 7:
+			k2 ^= UInt32(tail[6]) << 16
+			fallthrough
+
+		case 6:
+			k2 ^= UInt32(tail[5]) << 8
+			fallthrough
+
+		case 5:
+			k2 ^= UInt32(tail[4]) << 0
 			k2 &*= c2
-			k2 = Common.rotl(k2, r: 33)
-			k2 &*= c1
+			k2 = Common.rotl(k2, r: 16)
+			k2 &*= c3
 			h2 ^= k2
 			fallthrough
-			
-			
-		case 8:
-			k1 ^= UInt64(tail[7]) << 56
-			fallthrough
-			
-		case 7:
-			k1 ^= UInt64(tail[6]) << 48
-			fallthrough
-			
-		case 6:
-			k1 ^= UInt64(tail[5]) << 40
-			fallthrough
-			
-		case 5:
-			k1 ^= UInt64(tail[4]) << 32
-			fallthrough
-			
+
+
 		case 4:
-			k1 ^= UInt64(tail[3]) << 24
+			k1 ^= UInt32(tail[3]) << 24
 			fallthrough
-			
+
 		case 3:
-			k1 ^= UInt64(tail[2]) << 16
+			k1 ^= UInt32(tail[2]) << 16
 			fallthrough
-			
+
 		case 2:
-			k1 ^= UInt64(tail[1]) << 8
+			k1 ^= UInt32(tail[1]) << 8
 			fallthrough
-			
+
 		case 1:
-			k1 ^= UInt64(tail[0]) << 0
+			k1 ^= UInt32(tail[0]) << 0
 			k1 &*= c1
-			k1 = Common.rotl(k1, r: 31)
+			k1 = Common.rotl(k1, r: 15)
 			k1 &*= c2
 			h1 ^= k1
-			
+
 		default:
 			break
 		}
-		
-		
+
+
 		/**
 		 * finalization
 		 */
-		h1 ^= UInt64(len)
-		h2 ^= UInt64(len)
-		
+		h1 ^= UInt32(len)
+		h2 ^= UInt32(len)
+		h3 ^= UInt32(len)
+		h4 ^= UInt32(len)
+
 		h1 &+= h2
+		h1 &+= h3
+		h1 &+= h4
 		h2 &+= h1
-		
-		h1 = Common.fmix64(h1)
-		h2 = Common.fmix64(h2)
-		
+		h3 &+= h1
+		h4 &+= h1
+
+		h1 = Common.fmix32(h1)
+		h2 = Common.fmix32(h2)
+		h3 = Common.fmix32(h3)
+		h4 = Common.fmix32(h4)
+
 		h1 &+= h2
+		h1 &+= h3
+		h1 &+= h4
 		h2 &+= h1
-		
-		return [h1, h2]
+		h3 &+= h1
+		h4 &+= h1
+
+		return [h1, h2, h3, h4]
 	}
-	
+
 }
 
 
 
 // MARK: - Digest(One-shot)
-extension MurmurHash3.x64_128 {
+extension MurmurHash3.x86_128 {
 	
 	/// Generate digest
 	///
@@ -203,12 +254,12 @@ extension MurmurHash3.x64_128 {
 	///   - array: A source data for hash.
 	///   - seed: A seed for generate digest. Default is 0.
 	/// - Returns: An array of generated digest.
-	static public func digest(_ array: [UInt8], seed: UInt32 = 0) -> [UInt64] {
+	static public func digest(_ array: [UInt8], seed: UInt32 = 0) -> [UInt32] {
 		
 		/**
 		 * body
 		 */
-		var h = body([UInt64](repeating: UInt64(seed), count: 2), array: array)
+		var h = body([UInt32](repeating: seed, count: 4), array: array)
 		
 		
 		
@@ -227,17 +278,17 @@ extension MurmurHash3.x64_128 {
 	}
 	
 	/// Overload func for "digest(_ array: [UInt8], seed: UInt32 = 0)".
-	static public func digest(_ string: String, seed: UInt32 = 0) -> [UInt64] {
+	static public func digest(_ string: String, seed: UInt32 = 0) -> [UInt32] {
 		return digest(Array(string.utf8), seed: seed)
 	}
 	
 	/// Overload func for "digest(_ array: [UInt8], seed: UInt32 = 0)".
-	static public func digest(_ data: Data, seed: UInt32 = 0) -> [UInt64] {
+	static public func digest(_ data: Data, seed: UInt32 = 0) -> [UInt32] {
 		return digest([UInt8](data), seed: seed)
 	}
 	
 	
-	/// Generate digest's hex string(x64_128)
+	/// Generate digest's hex string(x86_128)
 	///
 	/// - Parameters:
 	///   - array: A source data for hash.
@@ -245,19 +296,19 @@ extension MurmurHash3.x64_128 {
 	/// - Returns: A generated digest's hex string.
 	static public func digestHex(_ array: [UInt8], seed: UInt32 = 0) -> String {
 		let h = digest(array, seed: seed)
-		return Common.UInt64ArrayToHex(h)
+		return Common.UInt32ArrayToHex(h)
 	}
 	
 	/// Overload func for "digestHex(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func digestHex(_ string: String, seed: UInt32 = 0) -> String {
 		let h = digest(string, seed: seed)
-		return Common.UInt64ArrayToHex(h)
+		return Common.UInt32ArrayToHex(h)
 	}
 	
 	/// Overload func for "digestHex(_ array: [UInt8], seed: UInt32 = 0)".
 	static public func digestHex(_ data: Data, seed: UInt32 = 0) -> String {
 		let h = digest(data, seed: seed)
-		return Common.UInt64ArrayToHex(h)
+		return Common.UInt32ArrayToHex(h)
 	}
 	
 }
@@ -265,12 +316,12 @@ extension MurmurHash3.x64_128 {
 
 
 // MARK: - Digest(Streaming)
-extension MurmurHash3.x64_128 {
-	
+extension MurmurHash3.x86_128 {
+
 	/// Reset current streaming state to initial.
 	public func reset() {
-		state = MurmurHash3.x64_128.State()
-		state.h = [UInt64](repeating: UInt64(self.seed), count: 2)
+		state = MurmurHash3.x86_128.State()
+		state.h = [UInt32](repeating: self.seed, count: 4)
 	}
 	
 	/// Update streaming state.
@@ -298,7 +349,7 @@ extension MurmurHash3.x64_128 {
 		/**
 		 * body
 		 */
-		state.h = MurmurHash3.x64_128.body(state.h, array: array2)
+		state.h = MurmurHash3.x86_128.body(state.h, array: array2)
 		
 		
 		// fill in tmp buffer
@@ -326,14 +377,14 @@ extension MurmurHash3.x64_128 {
 	/// Generate digest
 	///
 	/// - Returns: A generated digest from current streaming state.
-	public func digest() -> [UInt64] {
+	public func digest() -> [UInt32] {
 		/**
 		* tail and finalize
 		*/
 		var tail2 = Array(state.tail.rawArray())
 		tail2.removeFirst(tail2.count - state.totalLen % 16)
 		
-		let h = MurmurHash3.x64_128.tailAndFinalize(state.h,
+		let h = MurmurHash3.x86_128.tailAndFinalize(state.h,
 													tail: tail2,
 													len: state.totalLen)
 		
@@ -346,7 +397,7 @@ extension MurmurHash3.x64_128 {
 	/// - Returns: A generated digest's hex string.
 	public func digestHex() -> String {
 		let h = digest()
-		return Common.UInt64ArrayToHex(h)
+		return Common.UInt32ArrayToHex(h)
 	}
 	
 }
