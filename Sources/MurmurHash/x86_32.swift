@@ -48,7 +48,7 @@ extension MurmurHash3.x86_32 {
 		var totalLen: Int = 0
 		var mem = [UInt8](repeating: 0, count: 3)
 		var memSize: Int = 0
-		var tail = Murmur3Tail(3)
+		var tail = MurmurHash3Tail(3)
 		var h1: UInt32 = 0
 	}
 }
@@ -141,7 +141,7 @@ extension MurmurHash3.x86_32 {
 		 * tail and finalize
 		 */
 		let nblocks = array.count / 4
-		let tail = Murmur3Tail(3)
+		let tail = MurmurHash3Tail(3)
 		for i in 0..<array.count % 4 {
 			tail.add(array[nblocks * 4 + i])
 		}

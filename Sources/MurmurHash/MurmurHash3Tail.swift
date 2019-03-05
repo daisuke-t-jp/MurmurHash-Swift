@@ -1,5 +1,5 @@
 //
-//  Murmur3Tail.swift
+//  MurmurHash3Tail.swift
 //  MurmurHash
 //
 //  Created by Daisuke T on 2019/03/04.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class Murmur3Tail {
+final class MurmurHash3Tail {
 	// MARK: - Property
 	private var array: [UInt8]
 	private var max: Int
@@ -24,7 +24,7 @@ final class Murmur3Tail {
 
 
 // MARK: - Operation
-extension Murmur3Tail {
+extension MurmurHash3Tail {
 	public func add(_ newElement: UInt8) {
 		if array.count >= max {
 			array.replaceSubrange(0..<max-1, with: Array(array[1..<max]))

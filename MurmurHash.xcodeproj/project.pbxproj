@@ -15,6 +15,21 @@
 		029CB203220A9D8100FA2648 /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB202220A9D8100FA2648 /* MurmurHash3.swift */; };
 		029CB20D220ACBD200FA2648 /* MurmurHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */; };
 		029CB20F220ACBD200FA2648 /* MurmurHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029CB1F7220A9D6C00FA2648 /* MurmurHash.framework */; };
+		02DC431C222CEA8200F3AADC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431B222CEA8200F3AADC /* Common.swift */; };
+		02DC431D222CEA8200F3AADC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431B222CEA8200F3AADC /* Common.swift */; };
+		02DC431E222CEA8200F3AADC /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431B222CEA8200F3AADC /* Common.swift */; };
+		02DC4320222CEFA300F3AADC /* x86_32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431F222CEFA300F3AADC /* x86_32.swift */; };
+		02DC4321222CEFA300F3AADC /* x86_32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431F222CEFA300F3AADC /* x86_32.swift */; };
+		02DC4322222CEFA300F3AADC /* x86_32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC431F222CEFA300F3AADC /* x86_32.swift */; };
+		02DC4324222CF48E00F3AADC /* x86_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4323222CF48E00F3AADC /* x86_128.swift */; };
+		02DC4325222CF48E00F3AADC /* x86_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4323222CF48E00F3AADC /* x86_128.swift */; };
+		02DC4326222CF48E00F3AADC /* x86_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4323222CF48E00F3AADC /* x86_128.swift */; };
+		02DC4328222CF59C00F3AADC /* x64_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4327222CF59C00F3AADC /* x64_128.swift */; };
+		02DC4329222CF59C00F3AADC /* x64_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4327222CF59C00F3AADC /* x64_128.swift */; };
+		02DC432A222CF59C00F3AADC /* x64_128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC4327222CF59C00F3AADC /* x64_128.swift */; };
+		02DC432D222D167200F3AADC /* MurmurHash3Tail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */; };
+		02DC432E222D167200F3AADC /* MurmurHash3Tail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */; };
+		02DC432F222D167200F3AADC /* MurmurHash3Tail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */; };
 		7E3D40BB22114F8B00A66B74 /* MurmurHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3D40B222114F8B00A66B74 /* MurmurHash.framework */; };
 		7E3D40C92211502400A66B74 /* MurmurHash.h in Headers */ = {isa = PBXBuildFile; fileRef = 029CB1FA220A9D6C00FA2648 /* MurmurHash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E3D40CA2211503100A66B74 /* MurmurHash3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CB202220A9D8100FA2648 /* MurmurHash3.swift */; };
@@ -58,6 +73,11 @@
 		029CB20A220ACBD200FA2648 /* MurmurHashTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029CB20C220ACBD200FA2648 /* MurmurHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHashTests.swift; sourceTree = "<group>"; };
 		029CB20E220ACBD200FA2648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		02DC431B222CEA8200F3AADC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		02DC431F222CEFA300F3AADC /* x86_32.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = x86_32.swift; sourceTree = "<group>"; };
+		02DC4323222CF48E00F3AADC /* x86_128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = x86_128.swift; sourceTree = "<group>"; };
+		02DC4327222CF59C00F3AADC /* x64_128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = x64_128.swift; sourceTree = "<group>"; };
+		02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MurmurHash3Tail.swift; sourceTree = "<group>"; };
 		7E3D40B222114F8B00A66B74 /* MurmurHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MurmurHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3D40BA22114F8B00A66B74 /* MurmurHashTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MurmurHashTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC813382219C69100786650 /* alice29.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = alice29.txt; sourceTree = "<group>"; };
@@ -112,6 +132,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020D195F222DF4450078FAA6 /* x86_32 */ = {
+			isa = PBXGroup;
+			children = (
+				02DC431F222CEFA300F3AADC /* x86_32.swift */,
+			);
+			name = x86_32;
+			sourceTree = "<group>";
+		};
+		020D1966222DFB9D0078FAA6 /* x86_128 */ = {
+			isa = PBXGroup;
+			children = (
+				02DC4323222CF48E00F3AADC /* x86_128.swift */,
+			);
+			name = x86_128;
+			sourceTree = "<group>";
+		};
+		020D196B222E18CE0078FAA6 /* x64_128 */ = {
+			isa = PBXGroup;
+			children = (
+				02DC4327222CF59C00F3AADC /* x64_128.swift */,
+			);
+			name = x64_128;
+			sourceTree = "<group>";
+		};
 		0290FBD4220C0A7F0076E82F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +191,12 @@
 			children = (
 				029CB1FB220A9D6C00FA2648 /* Info.plist */,
 				029CB1FA220A9D6C00FA2648 /* MurmurHash.h */,
+				02DC431B222CEA8200F3AADC /* Common.swift */,
+				02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */,
 				029CB202220A9D8100FA2648 /* MurmurHash3.swift */,
+				020D195F222DF4450078FAA6 /* x86_32 */,
+				020D1966222DFB9D0078FAA6 /* x86_128 */,
+				020D196B222E18CE0078FAA6 /* x64_128 */,
 			);
 			name = MurmurHash;
 			path = Sources/MurmurHash;
@@ -459,6 +508,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DC431D222CEA8200F3AADC /* Common.swift in Sources */,
+				02DC432E222D167200F3AADC /* MurmurHash3Tail.swift in Sources */,
+				02DC4321222CEFA300F3AADC /* x86_32.swift in Sources */,
+				02DC4329222CF59C00F3AADC /* x64_128.swift in Sources */,
+				02DC4325222CF48E00F3AADC /* x86_128.swift in Sources */,
 				0290FBBB220C01610076E82F /* MurmurHash3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +529,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DC431C222CEA8200F3AADC /* Common.swift in Sources */,
+				02DC432D222D167200F3AADC /* MurmurHash3Tail.swift in Sources */,
+				02DC4320222CEFA300F3AADC /* x86_32.swift in Sources */,
+				02DC4328222CF59C00F3AADC /* x64_128.swift in Sources */,
+				02DC4324222CF48E00F3AADC /* x86_128.swift in Sources */,
 				029CB203220A9D8100FA2648 /* MurmurHash3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +550,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02DC431E222CEA8200F3AADC /* Common.swift in Sources */,
+				02DC432F222D167200F3AADC /* MurmurHash3Tail.swift in Sources */,
+				02DC4322222CEFA300F3AADC /* x86_32.swift in Sources */,
+				02DC432A222CF59C00F3AADC /* x64_128.swift in Sources */,
+				02DC4326222CF48E00F3AADC /* x86_128.swift in Sources */,
 				7E3D40CA2211503100A66B74 /* MurmurHash3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
