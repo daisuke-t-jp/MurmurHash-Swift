@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
                    DESC
 
   spec.homepage     = "https://github.com/daisuke-t-jp/MurmurHash-Swift"
-  spec.screenshots  = "https://raw.githubusercontent.com/daisuke-t-jp/MurmurHash-Swift/master/doc/header.png"
+  spec.screenshots  = "https://raw.githubusercontent.com/daisuke-t-jp/MurmurHash-Swift/master/images/header.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
