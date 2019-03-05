@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MurmurHash  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="MurmurHash  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">MurmurHash Docs</a> (87% documented)</p>
+        <p class="header-right"><a href="https://github.com/daisuke-t-jp/MurmurHash-Swift"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">MurmurHash Reference</a>
+        <img id="carat" src="img/carat.png" />
+        MurmurHash  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/MurmurHash3.html">MurmurHash3</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MurmurHash3/x64_128.html">– x64_128</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MurmurHash3/x86_128.html">– x86_128</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MurmurHash3/x86_32.html">– x86_32</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h2 id='img-src-https-github-com-daisuke-t-jp-murmurhash-swift-blob-master-images-header-png-width-700-br' class='heading'><img src="https://github.com/daisuke-t-jp/MurmurHash-Swift/blob/master/images/header.png" width="700"></br></h2>
+
+<p><img src="https://img.shields.io/badge/Platform-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20Linux-blue.svg" alt="Platform">
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/Language-Swift%204.2-orange.svg" alt="Language Swift%204.2"></a>
+<a href="https://cocoapods.org/pods/MurmurHash-Swift"><img src="https://img.shields.io/cocoapods/v/MurmurHash-Swift.svg" alt="Cocoapods"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-green.svg" alt="Carthage compatible"></a>
+<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/SwiftPM-compatible-green.svg" alt="SwiftPM compatible"></a>
+<a href="https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift"><img src="https://travis-ci.org/daisuke-t-jp/MurmurHash-Swift.svg?branch=master" alt="Build Status"></a></p>
+<h1 id='introduction' class='heading'>Introduction</h1>
+
+<p><strong>MurmurHash</strong> framework in Swift.<br>
+A framework includes MurmurHash3&rsquo;s x86_32/x86_128/x64_128 functions.  </p>
+
+<p>Reference :</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/MurmurHash">MurmurHash - Wikipedia</a></li>
+</ul>
+<h1 id='requirements' class='heading'>Requirements</h1>
+
+<ul>
+<li>Platforms
+
+<ul>
+<li>iOS 10.0+</li>
+<li>macOS 10.12+</li>
+<li>tvOS 12.0+</li>
+<li>Linux</li>
+</ul></li>
+<li>Swift 4.2+</li>
+</ul>
+<h1 id='installation' class='heading'>Installation</h1>
+<h2 id='cocoapods' class='heading'>CocoaPods</h2>
+<pre class="highlight plaintext"><code>use_frameworks!
+
+target 'target' do
+pod 'MurmurHash-Swift'
+end
+</code></pre>
+<h2 id='carthage' class='heading'>Carthage</h2>
+
+<p><code>github &quot;daisuke-t-jp/MurmurHash-Swift&quot;</code></p>
+<h2 id='swift-package-manager' class='heading'>Swift Package Manager</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"YOUR_PACKAGE_NAME"</span><span class="p">,</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/daisuke-t-jp/MurmurHash-Swift.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="nf">target</span><span class="p">(</span>
+            <span class="nv">name</span><span class="p">:</span> <span class="s">"YOUR_TARGET_NAME"</span><span class="p">,</span>
+            <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"MurmurHash-Swift"</span><span class="p">]),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h1 id='usage' class='heading'>Usage</h1>
+<h2 id='import-framework' class='heading'>Import framework</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">MurmurHash_Swift</span>
+</code></pre>
+<h2 id='generate-digest-one-shot' class='heading'>Generate digest(One-shot)</h2>
+<h3 id='x86_32' class='heading'>x86_32</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x86_32</span><span class="o">.</span><span class="nf">digest</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">)</span>
+<span class="c1">// digest -&gt; 0x0be480fc</span>
+
+<span class="c1">// Using seed.</span>
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x86_32</span><span class="o">.</span><span class="nf">digest</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">,</span> <span class="nv">seed</span><span class="p">:</span> <span class="mh">0x7fffffff</span><span class="p">)</span>
+<span class="c1">// digest -&gt; 0x47fcc800</span>
+</code></pre>
+<h3 id='x86_128' class='heading'>x86_128</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x86_128</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">)</span>
+<span class="c1">// digest -&gt; "86163d2b245b8ee23c4d056024166d77"</span>
+
+<span class="c1">// Using seed.</span>
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x86_128</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">,</span> <span class="nv">seed</span><span class="p">:</span> <span class="mh">0x7fffffff</span><span class="p">)</span>
+<span class="c1">// digest -&gt; "d1ab28e6f4fc514c5e0df753b015261f"</span>
+</code></pre>
+<h3 id='x64_128' class='heading'>x64_128</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x64_128</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">)</span>
+<span class="c1">// digest -&gt; "e881a28e49269b1e8d0d724eecb72e66"</span>
+
+<span class="c1">// Using seed.</span>
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="n">x64_128</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">(</span><span class="s">"Hello World! Hello World!"</span><span class="p">,</span> <span class="nv">seed</span><span class="p">:</span> <span class="mh">0x7fffffff</span><span class="p">)</span>
+<span class="c1">// digest -&gt; "6028586a8c3df476fbd535aec6551aab"</span>
+</code></pre>
+<h2 id='generate-digest-streaming' class='heading'>Generate digest(Streaming)</h2>
+<h3 id='x86_32' class='heading'>x86_32</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">mmh</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="nf">x86_32</span><span class="p">()</span> <span class="c1">// if using seed, e.g. "MurmurHash3.x86_32(0x7fffffff)"</span>
+
+<span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="k">self</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="nf">path</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"alice29"</span><span class="p">,</span> <span class="nv">ofType</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">NSData</span><span class="p">(</span><span class="nv">contentsOfFile</span><span class="p">:</span> <span class="n">path</span><span class="p">)</span><span class="o">!</span> <span class="k">as</span> <span class="kt">Data</span>
+
+<span class="k">let</span> <span class="nv">bufSize</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="k">var</span> <span class="nv">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">repeat</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">bufSize</span>
+    <span class="k">if</span> <span class="n">lastIndex</span> <span class="o">&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="n">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">index</span>
+    <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="o">..&lt;</span><span class="n">lastIndex</span><span class="p">]</span>
+    <span class="n">mmh</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="n">data2</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="n">mmh</span><span class="o">.</span><span class="nf">digest</span><span class="p">()</span>
+<span class="c1">// digest -&gt; 0xcae14481</span>
+</code></pre>
+<h3 id='x86_128' class='heading'>x86_128</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">mmh</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="nf">x86_128</span><span class="p">()</span> <span class="c1">// if using seed, e.g. "MurmurHash3.x86_128(0x7fffffff)"</span>
+
+<span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="k">self</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="nf">path</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"alice29"</span><span class="p">,</span> <span class="nv">ofType</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">NSData</span><span class="p">(</span><span class="nv">contentsOfFile</span><span class="p">:</span> <span class="n">path</span><span class="p">)</span><span class="o">!</span> <span class="k">as</span> <span class="kt">Data</span>
+
+<span class="k">let</span> <span class="nv">bufSize</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="k">var</span> <span class="nv">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">repeat</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">bufSize</span>
+    <span class="k">if</span> <span class="n">lastIndex</span> <span class="o">&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="n">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">index</span>
+    <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="o">..&lt;</span><span class="n">lastIndex</span><span class="p">]</span>
+    <span class="n">mmh</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="n">data2</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="n">mmh</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">()</span>
+<span class="c1">// digest -&gt; "f3d9739244076beaaaa983c7cc4c7251"</span>
+</code></pre>
+<h3 id='x64_128' class='heading'>x64_128</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">mmh</span> <span class="o">=</span> <span class="kt">MurmurHash3</span><span class="o">.</span><span class="nf">x64_128</span><span class="p">()</span> <span class="c1">// if using seed, e.g. "MurmurHash3.x64_128(0x7fffffff)"</span>
+
+<span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="k">self</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">path</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="nf">path</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"alice29"</span><span class="p">,</span> <span class="nv">ofType</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">NSData</span><span class="p">(</span><span class="nv">contentsOfFile</span><span class="p">:</span> <span class="n">path</span><span class="p">)</span><span class="o">!</span> <span class="k">as</span> <span class="kt">Data</span>
+
+<span class="k">let</span> <span class="nv">bufSize</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="k">var</span> <span class="nv">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">repeat</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">bufSize</span>
+    <span class="k">if</span> <span class="n">lastIndex</span> <span class="o">&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="n">lastIndex</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="n">index</span>
+    <span class="p">}</span>
+
+    <span class="k">let</span> <span class="nv">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="o">..&lt;</span><span class="n">lastIndex</span><span class="p">]</span>
+    <span class="n">mmh</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="n">data2</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">if</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+        <span class="k">break</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">digest</span> <span class="o">=</span> <span class="n">mmh</span><span class="o">.</span><span class="nf">digestHex</span><span class="p">()</span>
+<span class="c1">// digest -&gt; "ef12617f3e2a5f9a44b3598f2e09cd50"</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/daisuke-t-jp/MurmurHash-Swift" target="_blank" rel="external">Daisuke T</a>. All rights reserved. (Last updated: 2019-03-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
