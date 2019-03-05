@@ -14,7 +14,40 @@ import XCTest
 #endif
 
 class MurmurHashTests: XCTestCase {
-
+	
+	// MARK: - Property
+	static var allTests = [
+		("test_x86_32Overload", test_x86_32Overload),
+		("test_x86_128Overload", test_x86_128Overload),
+		("test_x64_128Overload", test_x64_128Overload),
+		("test_x86_32OneShot", test_x86_32OneShot),
+		("test_x86_32OneShotWithSeed", test_x86_32OneShotWithSeed),
+		("test_x86_128OneShot", test_x86_128OneShot),
+		("test_x86_128OneShotWithSeed", test_x86_128OneShotWithSeed),
+		("test_x64_128OneShot", test_x64_128OneShot),
+		("test_x64_128OneShotWithSeed", test_x64_128OneShotWithSeed),
+		("test_x86_32Update", test_x86_32Update),
+		("test_x86_32UpdateWithSeed", test_x86_32UpdateWithSeed),
+		("test_x86_128Update", test_x86_128Update),
+		("test_x86_128UpdateWithSeed", test_x86_128UpdateWithSeed),
+		("test_x64_128Update", test_x64_128Update),
+		("test_x64_128UpdateWithSeed", test_x64_128UpdateWithSeed),
+		("test_x86_32Reset", test_x86_32Reset),
+		("test_x86_128Reset", test_x86_128Reset),
+		("test_x64_128Reset", test_x64_128Reset),
+		("test_x86_32Copy", test_x86_32Copy),
+		("test_x86_128Copy", test_x86_128Copy),
+		("test_x64_128Copy", test_x64_128Copy),
+		("test_x86_32File", test_x86_32File),
+		("test_x86_32FileWithSeed", test_x86_32FileWithSeed),
+		("test_x86_128File", test_x86_128File),
+		("test_x86_128FileWithSeed", test_x86_128FileWithSeed),
+		("test_x64_128File", test_x64_128File),
+		("test_x64_128FileWithSeed", test_x64_128FileWithSeed),
+		]
+	
+	
+	
 	override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
