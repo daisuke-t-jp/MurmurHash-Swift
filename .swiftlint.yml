@@ -15,3 +15,11 @@ disabled_rules:
     - vertical_parameter_alignment
 identifier_name:
     min_length: 1
+type_name:
+    excluded:
+        - x86_32
+        - x86_128
+        - x64_128
+        - x86_32State
+        - x86_128State
+        - x64_128State
