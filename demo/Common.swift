@@ -24,10 +24,30 @@ class Common {
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
 
-		print("x86_32(file) -> \(MurmurHash3.x86_32.digest(data))")
-		print("x86_32(file, seed: 0x7fffffff) -> \(MurmurHash3.x86_32.digest(data, seed: 0x7fffffff))")
-		print("x86_32Hex(file) -> 0x\(MurmurHash3.x86_32.digestHex(data))")
-		print("x86_32Hex(file, seed: 0x7fffffff) -> 0x\(MurmurHash3.x86_32.digestHex(data, seed: 0x7fffffff))")
+		let bufSize = 1024
+		var index = 0
+		
+		let mmh = MurmurHash3.x86_32()
+		let mmh2 = MurmurHash3.x86_32(0x7fffffff)
+
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			mmh2.update(data2)
+
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		print("x86_32Hex(file -> 0x\(mmh.digestHex())")
+		print("x86_32Hex(file, seed: 0x7fffffff) -> 0x\(mmh2.digestHex())")
 	}
 	
 	
@@ -52,18 +72,30 @@ class Common {
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
 		
-		print("x86_128(\"file\") ->" +
-			" \(MurmurHash3.x86_128.digest(data)[0])" +
-			" \(MurmurHash3.x86_128.digest(data)[1])" +
-			" \(MurmurHash3.x86_128.digest(data)[2])" +
-			" \(MurmurHash3.x86_128.digest(data)[3])")
-		print("x86_128(\"file!\", seed: 0x7fffffff) ->" +
-			" \(MurmurHash3.x86_128.digest(data, seed: 0x7fffffff)[0])" +
-			" \(MurmurHash3.x86_128.digest(data, seed: 0x7fffffff)[1])" +
-			" \(MurmurHash3.x86_128.digest(data, seed: 0x7fffffff)[2])" +
-			" \(MurmurHash3.x86_128.digest(data, seed: 0x7fffffff)[3])")
-		print("x86_128Hex(\"file\") -> 0x\(MurmurHash3.x86_128.digestHex(data))")
-		print("x86_128Hex(\"file\", seed: 0x7fffffff) -> 0x\(MurmurHash3.x86_128.digestHex(data, seed: 0x7fffffff))")
+		let bufSize = 1024
+		var index = 0
+		
+		let mmh = MurmurHash3.x86_128()
+		let mmh2 = MurmurHash3.x86_128(0x7fffffff)
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			mmh2.update(data2)
+
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		print("x86_128Hex(file -> 0x\(mmh.digestHex())")
+		print("x86_128Hex(file, seed: 0x7fffffff) -> 0x\(mmh2.digestHex())")
 	}
 	
 	
@@ -83,15 +115,31 @@ class Common {
 		let bundle = Bundle(for: Common.self)
 		let path = bundle.path(forResource: "alice29", ofType: "txt")!
 		let data = NSData(contentsOfFile: path)! as Data
-
-		print("x64_128(\"file\") ->" +
-			" \(MurmurHash3.x64_128.digest(data)[0])" +
-			" \(MurmurHash3.x64_128.digest(data)[1])")
-		print("x64_128(\"file!\", seed: 0x7fffffff) ->" +
-			" \(MurmurHash3.x64_128.digest(data, seed: 0x7fffffff)[0])" +
-			" \(MurmurHash3.x64_128.digest(data, seed: 0x7fffffff)[1])")
-		print("x64_128Hex(\"file\") -> 0x\(MurmurHash3.x64_128.digestHex(data))")
-		print("x64_128Hex(\"file\", seed: 0x7fffffff) -> 0x\(MurmurHash3.x64_128.digestHex(data, seed: 0x7fffffff))")
+		
+		let bufSize = 1024
+		var index = 0
+		
+		let mmh = MurmurHash3.x64_128()
+		let mmh2 = MurmurHash3.x64_128(0x7fffffff)
+		
+		repeat {
+			var lastIndex = index + bufSize
+			if lastIndex > data.count {
+				lastIndex = index + data.count - index
+			}
+			
+			let data2 = data[index..<lastIndex]
+			mmh.update(data2)
+			mmh2.update(data2)
+			
+			index += data2.count
+			if index >= data.count {
+				break
+			}
+		} while(true)
+		
+		print("x64_128Hex(file -> 0x\(mmh.digestHex())")
+		print("x64_128Hex(file, seed: 0x7fffffff) -> 0x\(mmh2.digestHex())")
 	}
 
 }
