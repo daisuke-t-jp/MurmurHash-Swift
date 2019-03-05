@@ -9,7 +9,8 @@
 import Foundation
 
 extension MurmurHash3 {
-
+	
+	/// MurmurHash3 x86_128 class
 	public class x86_128 {
 
 		// MARK: - Enum, Const
