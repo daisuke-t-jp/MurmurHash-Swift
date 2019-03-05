@@ -25,7 +25,7 @@ final class MurmurHash3Tail {
 
 // MARK: - Operation
 extension MurmurHash3Tail {
-	public func add(_ newElement: UInt8) {
+	func add(_ newElement: UInt8) {
 		if array.count >= max {
 			array.replaceSubrange(0..<max-1, with: Array(array[1..<max]))
 			array.removeLast()
@@ -34,7 +34,7 @@ extension MurmurHash3Tail {
 		array.append(newElement)
 	}
 	
-	public func rawArray() -> [UInt8] {
+	func rawArray() -> [UInt8] {
 		return Array(array)
 	}
 }
