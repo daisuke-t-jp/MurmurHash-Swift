@@ -167,9 +167,9 @@
 			children = (
 				029CB1FB220A9D6C00FA2648 /* Info.plist */,
 				029CB1FA220A9D6C00FA2648 /* MurmurHash.h */,
+				029CB202220A9D8100FA2648 /* MurmurHash3.swift */,
 				02DC431B222CEA8200F3AADC /* Common.swift */,
 				02DC432C222D167200F3AADC /* MurmurHash3Tail.swift */,
-				029CB202220A9D8100FA2648 /* MurmurHash3.swift */,
 				02DC431F222CEFA300F3AADC /* MurmurHash3_x86_32.swift */,
 				02DC4323222CF48E00F3AADC /* MurmurHash3_x86_128.swift */,
 				02DC4327222CF59C00F3AADC /* MurmurHash3_x64_128.swift */,

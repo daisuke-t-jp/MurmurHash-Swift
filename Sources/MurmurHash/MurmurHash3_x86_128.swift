@@ -248,7 +248,7 @@ extension MurmurHash3.x86_128 {
 // MARK: - Digest(One-shot)
 extension MurmurHash3.x86_128 {
 	
-	/// Generate digest
+	/// Generate digest(One-shot)
 	///
 	/// - Parameters:
 	///   - array: A source data for hash.
@@ -288,7 +288,7 @@ extension MurmurHash3.x86_128 {
 	}
 	
 	
-	/// Generate digest's hex string(x86_128)
+	/// Generate digest's hex string(One-shot)
 	///
 	/// - Parameters:
 	///   - array: A source data for hash.
@@ -374,13 +374,13 @@ extension MurmurHash3.x86_128 {
 	
 	
 	
-	/// Generate digest
+	/// Generate digest(Streaming)
 	///
 	/// - Returns: A generated digest from current streaming state.
 	public func digest() -> [UInt32] {
 		/**
-		* tail and finalize
-		*/
+		 * tail and finalize
+		 */
 		var tail2 = Array(state.tail.rawArray())
 		tail2.removeFirst(tail2.count - state.totalLen % 16)
 		
@@ -392,9 +392,9 @@ extension MurmurHash3.x86_128 {
 	}
 	
 	
-	/// Generate digest's hex string
+	/// Generate digest's hex string(Streaming)
 	///
-	/// - Returns: A generated digest's hex string.
+	/// - Returns: A generated digest's hex string from current streaming state.
 	public func digestHex() -> String {
 		let h = digest()
 		return Common.UInt32ArrayToHex(h)
