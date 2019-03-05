@@ -43,7 +43,7 @@ extension MurmurHash3 {
 
 // MARK: - State
 extension MurmurHash3.x64_128 {
-	struct State {
+	private struct State {
 		var totalLen: Int = 0
 		var mem = [UInt8](repeating: 0, count: 15)
 		var memSize: Int = 0
