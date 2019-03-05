@@ -66,29 +66,125 @@ let package = Package(
 import MurmurHash_Swift
 ```
 
-## Generate digest
+## Generate digest(One-shot)
+### x86_32
 ```swift
-let digest_x86_32 = MurmurHash3.x86_32("Hello World!") // if using seed, e.g. "MurmurHash3.x86_32("Hello World!", seed: 0x7fffffff)"
-// digest_x86_32 -> 0xdc09357d
+let digest = MurmurHash3.x86_32.digest("Hello World! Hello World!")
+// digest -> 0x0be480fc
 
-let digest_x86_32_hex = MurmurHash3.x86_32Hex("Hello World!")
-// digest_x86_32_hex -> "dc09357d"
+// Using seed.
+let digest = MurmurHash3.x86_32.digest("Hello World! Hello World!", seed: 0x7fffffff)
+// digest -> 0x47fcc800
+```
+
+### x86_128
+```swift
+let digest = MurmurHash3.x86_128.digestHex("Hello World! Hello World!")
+// digest -> "86163d2b245b8ee23c4d056024166d77"
+
+// Using seed.
+let digest = MurmurHash3.x86_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff)
+// digest -> "d1ab28e6f4fc514c5e0df753b015261f"
+```
+
+### x64_128
+```swift
+let digest = MurmurHash3.x64_128.digestHex("Hello World! Hello World!")
+// digest -> "e881a28e49269b1e8d0d724eecb72e66"
+
+// Using seed.
+let digest = MurmurHash3.x64_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff)
+// digest -> "6028586a8c3df476fbd535aec6551aab"
+```
 
 
-let digest_x86_128 = MurmurHash3.x86_128("Hello World!") // if using seed, e.g. "MurmurHash3.x86_128("Hello World!", seed: 0x7fffffff)"
-// digest_x86_128[0] -> 0x6bee9883
-// digest_x86_128[1] -> 0xeb1be4f5
-// digest_x86_128[2] -> 0x9dfb7172
-// digest_x86_128[3] -> 0xae3fbea9
+## Generate digest(Streaming)
+### x86_32
+```swift
+let mmh = MurmurHash3.x86_32() // if using seed, e.g. "MurmurHash3.x86_32(0x7fffffff)"
 
-let digest_x86_128_hex = MurmurHash3.x86_128Hex("Hello World!")
-// digest_x86_128_hex -> "6bee9883eb1be4f59dfb7172ae3fbea9"
+let bundle = Bundle(for: type(of: self))
+let path = bundle.path(forResource: "alice29", ofType: "txt")!
+let data = NSData(contentsOfFile: path)! as Data
 
+let bufSize = 1024
+var index = 0
 
-let digest_x64_128 = MurmurHash3.x64_128("Hello World!") // if using seed, e.g. "MurmurHash3.x64_128("Hello World!", seed: 0x7fffffff)"
-// digest_x64_128[0] -> 0x80025454af3196b2
-// digest_x64_128[1] -> 0xe57813856f452fa6
+repeat {
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
 
-let digest_x64_128_hex = MurmurHash3.x64_128Hex("Hello World!")
-// digest_x64_128_hex -> "80025454af3196b2e57813856f452fa6"
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
+
+    index += data2.count
+    if index >= data.count {
+        break
+    }
+} while(true)
+
+let digest = mmh.digest()
+// digest -> 0xcae14481
+```
+
+### x86_128
+```swift
+let mmh = MurmurHash3.x86_128() // if using seed, e.g. "MurmurHash3.x86_128(0x7fffffff)"
+
+let bundle = Bundle(for: type(of: self))
+let path = bundle.path(forResource: "alice29", ofType: "txt")!
+let data = NSData(contentsOfFile: path)! as Data
+
+let bufSize = 1024
+var index = 0
+
+repeat {
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
+
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
+
+    index += data2.count
+    if index >= data.count {
+        break
+    }
+} while(true)
+
+let digest = mmh.digestHex()
+// digest -> "f3d9739244076beaaaa983c7cc4c7251"
+```
+
+### x64_128
+```swift
+let mmh = MurmurHash3.x64_128() // if using seed, e.g. "MurmurHash3.x64_128(0x7fffffff)"
+
+let bundle = Bundle(for: type(of: self))
+let path = bundle.path(forResource: "alice29", ofType: "txt")!
+let data = NSData(contentsOfFile: path)! as Data
+
+let bufSize = 1024
+var index = 0
+
+repeat {
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
+
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
+
+    index += data2.count
+    if index >= data.count {
+        break
+    }
+} while(true)
+
+let digest = mmh.digestHex()
+// digest -> "ef12617f3e2a5f9a44b3598f2e09cd50"
 ```
