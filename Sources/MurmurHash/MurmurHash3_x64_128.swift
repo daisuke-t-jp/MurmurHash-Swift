@@ -67,7 +67,7 @@ extension MurmurHash3.x64_128 {
       
       var k1: UInt64 = Common.UInt8ArrayToUInt(array, index: i * 2 + 0, endian: Common.endian())
       var k2: UInt64 = Common.UInt8ArrayToUInt(array, index: i * 2 + 1, endian: Common.endian())
-
+      
       k1 &*= c1
       k1 = Common.rotl(k1, r: 31)
       k1 &*= c2
@@ -305,7 +305,7 @@ extension MurmurHash3.x64_128 {
     // fill in tmp buffer
     state.memSize = array2.count % 16
     state.mem.replaceSubrange(0..<state.memSize,
-                  with: array2[array2.count - state.memSize..<array2.count])
+                              with: array2[array2.count - state.memSize..<array2.count])
     
     for i in 0..<15 {
       state.tail.add(array2[array2.count - (15 - i)])

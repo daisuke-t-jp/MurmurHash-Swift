@@ -11,10 +11,10 @@ import UIKit
 import MurmurHash_Swift
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     Common.x86_32()
     Common.x86_32_file()
     

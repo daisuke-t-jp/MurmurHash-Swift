@@ -12,14 +12,14 @@ extension MurmurHash3 {
   
   /// MurmurHash3 x86_128 class
   public class x86_128 {
-
+    
     // MARK: - Enum, Const
     static private let c1: UInt32 = 0x239b961b
     static private let c2: UInt32 = 0xab0e9789
     static private let c3: UInt32 = 0x38b34ae5
     static private let c4: UInt32 = 0xa1e38b93
-
-
+    
+    
     // MARK: - Property
     private let endian = Common.endian()
     private var state = State()
@@ -28,10 +28,10 @@ extension MurmurHash3 {
         reset()
       }
     }
-
-
+    
+    
     // MARK: - Life cycle
-
+    
     /// Creates a new instance with the seed.
     ///
     /// - Parameter seed: A seed for generate digest. Default is 0.
@@ -39,7 +39,7 @@ extension MurmurHash3 {
       self.seed = seed
       reset()
     }
-
+    
   }
 }
 
@@ -60,14 +60,14 @@ extension MurmurHash3.x86_128 {
 
 // MARK: - Utility
 extension MurmurHash3.x86_128 {
-
+  
   static private func body(_ h: [UInt32], array: [UInt8]) -> [UInt32] {
     let nblocks = array.count / 16
     var h1: UInt32 = h[0]
     var h2: UInt32 = h[1]
     var h3: UInt32 = h[2]
     var h4: UInt32 = h[3]
-
+    
     for i in 0..<nblocks {
       
       var k1: UInt32 = Common.UInt8ArrayToUInt(array, index: i * 4, endian: Common.endian())
@@ -114,7 +114,7 @@ extension MurmurHash3.x86_128 {
     
     return [h1, h2, h3, h4]
   }
-
+  
   static private func tailAndFinalize(_ h: [UInt32], tail: [UInt8], len: Int) -> [UInt32] {
     var k1: UInt32 = 0
     var k2: UInt32 = 0
@@ -124,7 +124,7 @@ extension MurmurHash3.x86_128 {
     var h2: UInt32 = h[1]
     var h3: UInt32 = h[2]
     var h4: UInt32 = h[3]
-
+    
     /**
      * tail
      */
@@ -132,11 +132,11 @@ extension MurmurHash3.x86_128 {
     case 15:
       k4 ^= UInt32(tail[14]) << 16
       fallthrough
-
+      
     case 14:
       k4 ^= UInt32(tail[13]) << 8
       fallthrough
-
+      
     case 13:
       k4 ^= UInt32(tail[12]) << 0
       k4 &*= c4
@@ -144,20 +144,20 @@ extension MurmurHash3.x86_128 {
       k4 &*= c1
       h4 ^= k4
       fallthrough
-
-
+      
+      
     case 12:
       k3 ^= UInt32(tail[11]) << 24
       fallthrough
-
+      
     case 11:
       k3 ^= UInt32(tail[10]) << 16
       fallthrough
-
+      
     case 10:
       k3 ^= UInt32(tail[9]) << 8
       fallthrough
-
+      
     case 9:
       k3 ^= UInt32(tail[8]) << 0
       k3 &*= c3
@@ -165,20 +165,20 @@ extension MurmurHash3.x86_128 {
       k3 &*= c4
       h3 ^= k3
       fallthrough
-
-
+      
+      
     case 8:
       k2 ^= UInt32(tail[7]) << 24
       fallthrough
-
+      
     case 7:
       k2 ^= UInt32(tail[6]) << 16
       fallthrough
-
+      
     case 6:
       k2 ^= UInt32(tail[5]) << 8
       fallthrough
-
+      
     case 5:
       k2 ^= UInt32(tail[4]) << 0
       k2 &*= c2
@@ -186,32 +186,32 @@ extension MurmurHash3.x86_128 {
       k2 &*= c3
       h2 ^= k2
       fallthrough
-
-
+      
+      
     case 4:
       k1 ^= UInt32(tail[3]) << 24
       fallthrough
-
+      
     case 3:
       k1 ^= UInt32(tail[2]) << 16
       fallthrough
-
+      
     case 2:
       k1 ^= UInt32(tail[1]) << 8
       fallthrough
-
+      
     case 1:
       k1 ^= UInt32(tail[0]) << 0
       k1 &*= c1
       k1 = Common.rotl(k1, r: 15)
       k1 &*= c2
       h1 ^= k1
-
+      
     default:
       break
     }
-
-
+    
+    
     /**
      * finalization
      */
@@ -219,29 +219,29 @@ extension MurmurHash3.x86_128 {
     h2 ^= UInt32(len)
     h3 ^= UInt32(len)
     h4 ^= UInt32(len)
-
+    
     h1 &+= h2
     h1 &+= h3
     h1 &+= h4
     h2 &+= h1
     h3 &+= h1
     h4 &+= h1
-
+    
     h1 = Common.fmix32(h1)
     h2 = Common.fmix32(h2)
     h3 = Common.fmix32(h3)
     h4 = Common.fmix32(h4)
-
+    
     h1 &+= h2
     h1 &+= h3
     h1 &+= h4
     h2 &+= h1
     h3 &+= h1
     h4 &+= h1
-
+    
     return [h1, h2, h3, h4]
   }
-
+  
 }
 
 
@@ -318,7 +318,7 @@ extension MurmurHash3.x86_128 {
 
 // MARK: - Digest(Streaming)
 extension MurmurHash3.x86_128 {
-
+  
   /// Reset current streaming state to initial.
   public func reset() {
     state = MurmurHash3.x86_128.State()
@@ -356,7 +356,7 @@ extension MurmurHash3.x86_128 {
     // fill in tmp buffer
     state.memSize = array2.count % 16
     state.mem.replaceSubrange(0..<state.memSize,
-                  with: array2[array2.count - state.memSize..<array2.count])
+                              with: array2[array2.count - state.memSize..<array2.count])
     
     for i in 0..<15 {
       state.tail.add(array2[array2.count - (15 - i)])
@@ -386,8 +386,8 @@ extension MurmurHash3.x86_128 {
     tail2.removeFirst(tail2.count - state.totalLen % 16)
     
     let h = MurmurHash3.x86_128.tailAndFinalize(state.h,
-                          tail: tail2,
-                          len: state.totalLen)
+                                                tail: tail2,
+                                                len: state.totalLen)
     
     return h
   }

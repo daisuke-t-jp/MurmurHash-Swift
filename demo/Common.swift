@@ -23,13 +23,13 @@ class Common {
     let bundle = Bundle(for: Common.self)
     let path = bundle.path(forResource: "alice29", ofType: "txt")!
     let data = NSData(contentsOfFile: path)! as Data
-
+    
     let bufSize = 1024
     var index = 0
     
     let mmh = MurmurHash3.x86_32()
     let mmh2 = MurmurHash3.x86_32(0x7fffffff)
-
+    
     repeat {
       var lastIndex = index + bufSize
       if lastIndex > data.count {
@@ -39,7 +39,7 @@ class Common {
       let data2 = data[index..<lastIndex]
       mmh.update(data2)
       mmh2.update(data2)
-
+      
       index += data2.count
       if index >= data.count {
         break
@@ -87,7 +87,7 @@ class Common {
       let data2 = data[index..<lastIndex]
       mmh.update(data2)
       mmh2.update(data2)
-
+      
       index += data2.count
       if index >= data.count {
         break
@@ -141,5 +141,5 @@ class Common {
     print("x64_128Hex(file -> 0x\(mmh.digestHex())")
     print("x64_128Hex(file, seed: 0x7fffffff) -> 0x\(mmh2.digestHex())")
   }
-
+  
 }

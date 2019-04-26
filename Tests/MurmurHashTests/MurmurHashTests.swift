@@ -44,18 +44,18 @@ class MurmurHashTests: XCTestCase {
     ("test_x86_128FileWithSeed", test_x86_128FileWithSeed),
     ("test_x64_128File", test_x64_128File),
     ("test_x64_128FileWithSeed", test_x64_128FileWithSeed),
-    ]
+  ]
   
   
   
   override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+  }
+  
+  override func tearDown() {
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+  }
+  
   
   // MARK: - Overload
   func test_x86_32Overload() {
@@ -90,7 +90,7 @@ class MurmurHashTests: XCTestCase {
     XCTAssertEqual(MurmurHash3.x86_32.digest("Hello World! Hello World!", seed: 0x7fffffff), 0x47fcc800)
     XCTAssertEqual(MurmurHash3.x86_32.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "47fcc800")
   }
-
+  
   func test_x86_128OneShot() {
     XCTAssertEqual(MurmurHash3.x86_128.digest("")[0], 0x00000000)
     XCTAssertEqual(MurmurHash3.x86_128.digest("")[1], 0x00000000)
@@ -118,7 +118,7 @@ class MurmurHashTests: XCTestCase {
     XCTAssertEqual(MurmurHash3.x86_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[3], 0xb015261f)
     XCTAssertEqual(MurmurHash3.x86_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "d1ab28e6f4fc514c5e0df753b015261f")
   }
-
+  
   func test_x64_128OneShot() {
     XCTAssertEqual(MurmurHash3.x64_128.digest("")[0], 0x0000000000000000)
     XCTAssertEqual(MurmurHash3.x64_128.digest("")[1], 0x0000000000000000)
@@ -128,7 +128,7 @@ class MurmurHashTests: XCTestCase {
     XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!")[1], 0x8d0d724eecb72e66)
     XCTAssertEqual(MurmurHash3.x64_128.digestHex("Hello World! Hello World!").lowercased(), "e881a28e49269b1e8d0d724eecb72e66")
   }
-
+  
   func test_x64_128OneShotWithSeed() {
     XCTAssertEqual(MurmurHash3.x64_128.digest("", seed: 0x7fffffff)[0], 0x656ac7570e166c3f)
     XCTAssertEqual(MurmurHash3.x64_128.digest("", seed: 0x7fffffff)[1], 0xc34c2ca1ed468e40)
@@ -138,7 +138,7 @@ class MurmurHashTests: XCTestCase {
     XCTAssertEqual(MurmurHash3.x64_128.digest("Hello World! Hello World!", seed: 0x7fffffff)[1], 0xfbd535aec6551aab)
     XCTAssertEqual(MurmurHash3.x64_128.digestHex("Hello World! Hello World!", seed: 0x7fffffff).lowercased(), "6028586a8c3df476fbd535aec6551aab")
   }
-
+  
   
   
   // MARK: - Update
@@ -287,7 +287,7 @@ class MurmurHashTests: XCTestCase {
     mmh.seed = seed  // Reset when setting seed.
     XCTAssertEqual(mmh.digest(), MurmurHash3.x86_32(seed).digest())
   }
-
+  
   func test_x86_128Reset() {
     let seed = UInt32(0x7fffffff)
     let mmh = MurmurHash3.x86_128()
@@ -300,7 +300,7 @@ class MurmurHashTests: XCTestCase {
     mmh.seed = seed  // Reset when setting seed.
     XCTAssertEqual(mmh.digest(), MurmurHash3.x86_128(seed).digest())
   }
-
+  
   func test_x64_128Reset() {
     let seed = UInt32(0x7fffffff)
     let mmh = MurmurHash3.x64_128()

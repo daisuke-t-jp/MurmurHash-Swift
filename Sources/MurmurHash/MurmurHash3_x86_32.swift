@@ -77,7 +77,7 @@ extension MurmurHash3.x86_32 {
     
     return h1
   }
-
+  
   static private func tailAndFinalize(_ h1: UInt32, tail: [UInt8], len: Int) -> UInt32 {
     var k1: UInt32 = 0
     var h2 = h1
@@ -228,7 +228,7 @@ extension MurmurHash3.x86_32 {
     // fill in tmp buffer
     state.memSize = array2.count % 4
     state.mem.replaceSubrange(0..<state.memSize,
-                  with: array2[array2.count - state.memSize..<array2.count])
+                              with: array2[array2.count - state.memSize..<array2.count])
     
     for i in 0..<3 {
       state.tail.add(array2[array2.count - (3 - i)])
@@ -270,5 +270,5 @@ extension MurmurHash3.x86_32 {
     let h = digest()
     return Common.UInt32ArrayToHex([h])
   }
-
+  
 }

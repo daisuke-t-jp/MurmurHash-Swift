@@ -10,7 +10,7 @@ import Foundation
 import CoreFoundation
 
 final class Common {
-
+  
   // MARK: - Enum, Const
   enum Endian {
     case little
@@ -72,7 +72,7 @@ extension Common {
 
 // MARK: - Utility(Convert)
 extension Common {
-
+  
   static private func UInt8ArrayToUInt<T: FixedWidthInteger>(_ array: [UInt8], index: Int) -> T {
     var block: T = 0
     
@@ -96,7 +96,7 @@ extension Common {
     
     return block
   }
-
+  
   
   static func UInt32ArrayToHex(_ array: [UInt32]) -> String {
     var hex = ""
