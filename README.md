@@ -44,14 +44,13 @@ import PackageDescription
 
 let package = Package(
   name: "YOUR_PACKAGE_NAME",
-  targets: [],
   dependencies: [
     // Swift 4.2
     .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", .exact("1.0.11"))
     
     // Swift 5.0
     .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", from: "1.0.12")
-  ]
+  ],
   targets: [
     .target(
       name: "YOUR_TARGET_NAME",
