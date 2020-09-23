@@ -41,19 +41,19 @@ end
 import PackageDescription
 
 let package = Package(
-  name: "YOUR_PACKAGE_NAME",
-  dependencies: [
-    // Swift 4.2
-    .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", .exact("1.0.11"))
+    name: "YOUR_PACKAGE_NAME",
+    dependencies: [
+        // Swift 4.2
+        .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", .exact("1.0.11"))
     
-    // Swift 5.0
-    .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", from: "1.0.12")
-  ],
-  targets: [
-    .target(
-      name: "YOUR_TARGET_NAME",
-      dependencies: ["MurmurHash-Swift"]),
-  ]
+        // Swift 5.0
+        .package(url: "https://github.com/daisuke-t-jp/MurmurHash-Swift.git", from: "1.0.12")
+    ],
+    targets: [
+        .target(
+            name: "YOUR_TARGET_NAME",
+            dependencies: ["MurmurHash-Swift"]),
+    ]
 )
 ```
 
@@ -111,18 +111,18 @@ let bufSize = 1024
 var index = 0
 
 repeat {
-  var lastIndex = index + bufSize
-  if lastIndex > data.count {
-    lastIndex = index + data.count - index
-  }
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
 
-  let data2 = data[index..<lastIndex]
-  mmh.update(data2)
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
 
-  index += data2.count
-  if index >= data.count {
-    break
-  }
+    index += data2.count
+    if index >= data.count {
+        break
+    }
 } while(true)
 
 let digest = mmh.digest()
@@ -141,18 +141,18 @@ let bufSize = 1024
 var index = 0
 
 repeat {
-  var lastIndex = index + bufSize
-  if lastIndex > data.count {
-    lastIndex = index + data.count - index
-  }
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
 
-  let data2 = data[index..<lastIndex]
-  mmh.update(data2)
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
 
-  index += data2.count
-  if index >= data.count {
-    break
-  }
+    index += data2.count
+    if index >= data.count {
+        break
+    }
 } while(true)
 
 let digest = mmh.digestHex()
@@ -171,18 +171,18 @@ let bufSize = 1024
 var index = 0
 
 repeat {
-  var lastIndex = index + bufSize
-  if lastIndex > data.count {
-    lastIndex = index + data.count - index
-  }
+    var lastIndex = index + bufSize
+    if lastIndex > data.count {
+        lastIndex = index + data.count - index
+    }
 
-  let data2 = data[index..<lastIndex]
-  mmh.update(data2)
+    let data2 = data[index..<lastIndex]
+    mmh.update(data2)
 
-  index += data2.count
-  if index >= data.count {
-    break
-  }
+    index += data2.count
+    if index >= data.count {
+        break
+    }
 } while(true)
 
 let digest = mmh.digestHex()
