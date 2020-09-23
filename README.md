@@ -12,8 +12,6 @@
 
 **MurmurHash** framework in Swift.  
 A framework includes MurmurHash3's x86_32/x86_128/x64_128 functions.  
-  
-[Documentation](https://daisuke-t-jp.github.io/MurmurHash-Swift/)
 
 
 # Requirements
