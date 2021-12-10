@@ -22,8 +22,7 @@ let package = Package(
         .target(
             name: "MurmurHash_Swift",
             dependencies: [],
-            path: "Sources/MurmurHash/",
-            exclude: ["MurmurHash.xcodeproj", "README.md", "Sources/MurmurHash/Info.plist", "Sources/MurmurHash/MurmurHash.h"]),
+            path: "Sources/MurmurHash/"),
         .testTarget(
             name: "MurmurHashTests",
             dependencies: ["MurmurHash_Swift"]),
